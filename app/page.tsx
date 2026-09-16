@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
-  Backpack,
   Check,
   ChevronRight,
   CircleAlert,
@@ -15,7 +14,6 @@ import {
   LocateFixed,
   MapPin,
   Menu,
-  Navigation,
   Plane,
   Plus,
   Save,
@@ -367,14 +365,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <nav className="mobile-bottom-nav" aria-label="快捷功能">
-        <button className="active"><Navigation /><span>行程</span></button>
-        <button onClick={() => setPanel("notes")}><CircleAlert /><span>提醒</span></button>
-        <button className="add" onClick={() => { setSelected(null); setEditOpen(true); }}><Plus /></button>
-        <button onClick={() => setPanel("packing")}><Backpack /><span>清单</span></button>
-        <button onClick={() => setMenuOpen(true)}><Menu /><span>更多</span></button>
-      </nav>
 
       <Sheet open={!!selected} onOpenChange={(open) => !open && setSelected(null)}>
         <SheetContent side="bottom" className="detail-sheet">
