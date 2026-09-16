@@ -29,6 +29,10 @@ npm run build
 
 项目使用静态导出，构建产物位于 `dist/client`，可以上传到任意静态服务器。若使用 GitHub Actions，把 `dist/client` 作为发布目录即可。
 
+### Vercel
+
+仓库内的 `vercel.json` 已将框架识别关闭，并明确把 `dist/client` 设为发布目录。连接 GitHub 仓库后按默认设置部署即可，不要在 Vercel 控制台把输出目录改回 `.next`。
+
 ## 数据说明
 
 地点编辑和购买清单使用浏览器 `localStorage` 保存，只在当前设备与浏览器中生效。导出 JSON 可用于换设备备份和恢复。
