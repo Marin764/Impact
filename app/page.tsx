@@ -254,7 +254,9 @@ export default function Home() {
   }, []);
 
   const daySpots = useMemo(() => spots.filter((spot) => spot.day === activeDay).sort((a, b) => a.order - b.order), [spots, activeDay]);
-  const dayRoutes = actualRoutes.filter((route) => route.day === activeDay);
+  // Keep the route collection stable while opening sheets or other UI state changes.
+  // TripMap only refits the camera when the active day (or itinerary) actually changes.
+  const dayRoutes = useMemo(() => actualRoutes.filter((route) => route.day === activeDay), [activeDay]);
   const currentDay = dayMeta[activeDay - 1];
   const selectedSpot = selected && "type" in selected ? selected : null;
   const selectedRoute = selected && "method" in selected ? selected : null;
