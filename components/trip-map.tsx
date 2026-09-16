@@ -33,6 +33,8 @@ type RouteFeature = {
   geometry: { type: "LineString"; coordinates: [number, number][] };
 };
 
+type RoutePath = RouteFeature["properties"] & { d: string };
+
 const SEOUL: [number, number] = [126.9918, 37.5665];
 
 function fallbackFeatures(spots: MapSpot[], routes: MapRoute[]): RouteFeature[] {
@@ -97,6 +99,8 @@ export default function TripMap({ spots, routes, color, focusNonce, onSpotSelect
   const mapRef = useRef<MapLibreMap | null>(null);
   const markersRef = useRef<Marker[]>([]);
   const [mapReady, setMapReady] = useState(false);
+  const [displayRoutes, setDisplayRoutes] = useState<RouteFeature[]>(() => fallbackFeatures(spots, routes));
+  const [routePaths, setRoutePaths] = useState<RoutePath[]>([]);
   const initialSpotsRef = useRef(spots);
   const initialRoutesRef = useRef(routes);
   const spotCallbackRef = useRef(onSpotSelect);
@@ -168,13 +172,48 @@ export default function TripMap({ spots, routes, color, focusNonce, onSpotSelect
     });
     if (!bounds.isEmpty()) map.fitBounds(bounds, { padding: { top: 90, bottom: 120, left: 70, right: 70 }, maxZoom: 14.5, duration: 700 });
     const update = async () => {
+      const fallback = fallbackFeatures(spots, routes);
       const source = map.getSource("trip-routes") as GeoJSONSource | undefined;
-      source?.setData({ type: "FeatureCollection", features: fallbackFeatures(spots, routes) });
+      setDisplayRoutes(fallback);
+      source?.setData({ type: "FeatureCollection", features: fallback });
       const features = await routedFeatures(spots, routes);
+      setDisplayRoutes(features);
       source?.setData({ type: "FeatureCollection", features });
     };
     if (mapReady) void update();
   }, [spots, routes, color, focusNonce, mapReady]);
 
-  return <div ref={containerRef} className="real-map" aria-label="可拖动、缩放和定位的真实地图" />;
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !mapReady) return;
+    const projectRoutes = () => {
+      setRoutePaths(displayRoutes.map((feature) => ({
+        ...feature.properties,
+        d: feature.geometry.coordinates.map(([lng, lat], index) => {
+          const point = map.project([lng, lat]);
+          return `${index ? "L" : "M"}${point.x.toFixed(1)} ${point.y.toFixed(1)}`;
+        }).join(" "),
+      })));
+    };
+    projectRoutes();
+    map.on("move", projectRoutes);
+    map.on("resize", projectRoutes);
+    return () => {
+      map.off("move", projectRoutes);
+      map.off("resize", projectRoutes);
+    };
+  }, [displayRoutes, mapReady]);
+
+  return <div className="trip-map-frame">
+    <div ref={containerRef} className="real-map" aria-label="可拖动、缩放和定位的真实地图" />
+    <svg className="real-route-overlay" aria-label="当天道路路线">
+      {routePaths.map((route) => <g key={route.routeId}>
+        <path className="real-route-case" d={route.d} />
+        <path className="real-route-line" d={route.d} />
+        <path className="real-route-hit" d={route.d} onClick={() => routeCallbackRef.current(route.routeIndex)}>
+          <title>查看第 {route.routeIndex + 1} 段路线</title>
+        </path>
+      </g>)}
+    </svg>
+  </div>;
 }
