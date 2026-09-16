@@ -18,7 +18,6 @@ import {
   Navigation,
   Plane,
   Plus,
-  Route,
   Save,
   ShieldCheck,
   Shirt,
@@ -33,6 +32,7 @@ import {
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
+import TripMap from "@/components/trip-map";
 
 type Spot = {
   id: string;
@@ -45,6 +45,8 @@ type Spot = {
   stay: string;
   x: number;
   y: number;
+  lat?: number;
+  lng?: number;
   photoPosition: "left" | "center" | "right";
   intro: string;
   tip: string;
@@ -88,22 +90,22 @@ void sampleRoutes;
 
 // Parsed from 首尔4天3晚_Citywalk夜景加强版.html in this workspace.
 const actualSpots: Spot[] = [
-  { id: "airport", day: 1, order: 1, name: "仁川机场", korean: "인천국제공항", type: "景点", time: "13:00", stay: "3–4小时", x: 13, y: 81, photoPosition: "left", intro: "完成入境、取行李并搭乘 6001 机场巴士前往东大门。", tip: "保存酒店韩文地址；按机场现场指引确认 6001 站台。", address: "Incheon International Airport" },
-  { id: "hotel", day: 1, order: 2, name: "东大门酒店", korean: "트래블로지 동대문 서울", type: "酒店", time: "16:30", stay: "办理入住", x: 63, y: 45, photoPosition: "center", intro: "三晚固定住宿点，也是每天路线的安全返回坐标。", tip: "入住时确认早餐、行李寄存和退房时间。", address: "Travelodge Dongdaemun Seoul" },
-  { id: "gwangjang-real", day: 1, order: 3, name: "广藏市场", korean: "광장시장", type: "美食", time: "17:30", stay: "45分钟", x: 57, y: 40, photoPosition: "center", intro: "用市场小吃认识首尔，再按体力决定正式晚饭。", tip: "晚到时市场和一只鸡只选一个，不叠两顿正餐。", address: "88 Changgyeonggung-ro, Jongno-gu" },
-  { id: "cheonggye", day: 1, order: 4, name: "清溪川东段", korean: "청계천 오간수교", type: "景点", time: "19:00", stay: "45分钟", x: 66, y: 48, photoPosition: "right", intro: "沿河道与街灯慢走，作为第一晚夜景开场。", tip: "桥上俯拍或河边低机位选一种即可，注意湿滑台阶。", address: "Ogansugyo, Jongno-gu" },
-  { id: "ddp", day: 1, order: 5, name: "东大门设计广场", korean: "동대문디자인플라자", type: "景点", time: "20:00", stay: "1小时", x: 72, y: 49, photoPosition: "right", intro: "用建筑曲面、人流和车灯完成 NIGHT 01。", tip: "不预设一定有灯光秀；人物用 1 倍，建筑可尝试 0.5 倍。", address: "281 Eulji-ro, Jung-gu" },
-  { id: "forest-real", day: 2, order: 1, name: "首尔林", korean: "서울숲", type: "景点", time: "09:30", stay: "1.5小时", x: 73, y: 68, photoPosition: "left", intro: "从林地、镜池和城市绿意开始第二天。", tip: "控制在 60–90 分钟，给圣水和汉江保留体力。", address: "273 Ttukseom-ro, Seongdong-gu" },
-  { id: "seongsu-real", day: 2, order: 2, name: "圣水演武场路", korean: "성수동 연무장길", type: "购物", time: "12:00", stay: "3小时", x: 80, y: 64, photoPosition: "center", intro: "午餐后沿红砖街区、品牌店和咖啡馆散步。", tip: "快闪信息变化快；同一天最多排一家热门店。", address: "Yeonmujang-gil, Seongdong-gu" },
-  { id: "tukseom", day: 2, order: 3, name: "纛岛汉江公园", korean: "뚝섬한강공원", type: "景点", time: "16:45", stay: "2小时", x: 86, y: 78, photoPosition: "right", intro: "从日落前等到桥梁与对岸灯光完全亮起。", tip: "提前日落 45–60 分钟到；江边风大，带薄外套。", address: "139 Gangbyeonbuk-ro, Gwangjin-gu" },
-  { id: "palace-real", day: 3, order: 1, name: "景福宫", korean: "경복궁", type: "景点", time: "09:00", stay: "2小时", x: 42, y: 27, photoPosition: "left", intro: "老城线起点，重点看勤政殿、庆会楼和宫墙。", tip: "周二闭馆；是否穿韩服以天气和舒适为先。", address: "161 Sajik-ro, Jongno-gu" },
-  { id: "samcheong", day: 3, order: 2, name: "三清洞", korean: "삼청동", type: "美食", time: "11:30", stay: "1小时", x: 50, y: 24, photoPosition: "center", intro: "用面片汤或简单韩餐补充体力。", tip: "排队过长就换附近餐厅，不错过北村时段。", address: "Samcheong-dong, Jongno-gu" },
-  { id: "bukchon-real", day: 3, order: 3, name: "北村韩屋村", korean: "북촌한옥마을", type: "景点", time: "13:00", stay: "1小时", x: 56, y: 22, photoPosition: "center", intro: "选一段能看到韩屋屋脊与城市层次的坡道。", tip: "居民区内压低音量，不堵门口，遵守现场限时。", address: "37 Gyedong-gil, Jongno-gu" },
-  { id: "ikseon", day: 3, order: 4, name: "益善洞", korean: "익선동 한옥거리", type: "美食", time: "14:30", stay: "1小时", x: 59, y: 35, photoPosition: "center", intro: "在韩屋巷里喝一杯，为傍晚骆山留出体力。", tip: "疲劳时删掉坐店，早点休息。", address: "Ikseon-dong, Jongno-gu" },
-  { id: "naksan", day: 3, order: 5, name: "骆山公园城墙", korean: "낙산공원", type: "景点", time: "17:00", stay: "2小时", x: 70, y: 31, photoPosition: "right", intro: "全程最高优先级夜景，从暮色看到城市完全亮起。", tip: "短途打车省上坡；不上墙、不跨护栏，蓝调时先拍合照。", address: "41 Naksan-gil, Jongno-gu" },
-  { id: "myeongdong-real", day: 4, order: 1, name: "明洞圣堂", korean: "명동대성당", type: "景点", time: "09:00", stay: "1小时", x: 48, y: 49, photoPosition: "left", intro: "返程日上午的轻量散步，用红砖建筑为行程收尾。", tip: "以外部参观为主，避开礼拜并保持安静。", address: "74 Myeongdong-gil, Jung-gu" },
-  { id: "hotel-return", day: 4, order: 2, name: "酒店取行李", korean: "호텔 체크아웃", type: "酒店", time: "11:15", stay: "45分钟", x: 63, y: 45, photoPosition: "center", intro: "取包、退房并在中午前正式出发。", tip: "不要把最后一小时留给购物。", address: "Travelodge Dongdaemun Seoul" },
-  { id: "port", day: 4, order: 3, name: "仁川国际码头", korean: "인천항 국제여객터미널", type: "景点", time: "15:00", stay: "登船", x: 11, y: 86, photoPosition: "right", intro: "地铁 1 号线至东仁川站，再打车前往国际客运码头。", tip: "不是机场也不是旧码头；至少提前 2–3 小时到港，并确认最晚报到时间。", address: "인천광역시 연수구 국제항만대로326번길 57" },
+  { id: "airport", day: 1, order: 1, name: "仁川机场", korean: "인천국제공항", type: "景点", time: "13:00", stay: "3–4小时", x: 13, y: 81, lat: 37.4602, lng: 126.4407, photoPosition: "left", intro: "完成入境、取行李并搭乘 6001 机场巴士前往东大门。", tip: "保存酒店韩文地址；按机场现场指引确认 6001 站台。", address: "Incheon International Airport" },
+  { id: "hotel", day: 1, order: 2, name: "东大门酒店", korean: "트래블로지 동대문 서울", type: "酒店", time: "16:30", stay: "办理入住", x: 63, y: 45, lat: 37.5664, lng: 127.0049, photoPosition: "center", intro: "三晚固定住宿点，也是每天路线的安全返回坐标。", tip: "入住时确认早餐、行李寄存和退房时间。", address: "Travelodge Dongdaemun Seoul" },
+  { id: "gwangjang-real", day: 1, order: 3, name: "广藏市场", korean: "광장시장", type: "美食", time: "17:30", stay: "45分钟", x: 57, y: 40, lat: 37.5701, lng: 126.9995, photoPosition: "center", intro: "用市场小吃认识首尔，再按体力决定正式晚饭。", tip: "晚到时市场和一只鸡只选一个，不叠两顿正餐。", address: "88 Changgyeonggung-ro, Jongno-gu" },
+  { id: "cheonggye", day: 1, order: 4, name: "清溪川东段", korean: "청계천 오간수교", type: "景点", time: "19:00", stay: "45分钟", x: 66, y: 48, lat: 37.5688, lng: 127.0097, photoPosition: "right", intro: "沿河道与街灯慢走，作为第一晚夜景开场。", tip: "桥上俯拍或河边低机位选一种即可，注意湿滑台阶。", address: "Ogansugyo, Jongno-gu" },
+  { id: "ddp", day: 1, order: 5, name: "东大门设计广场", korean: "동대문디자인플라자", type: "景点", time: "20:00", stay: "1小时", x: 72, y: 49, lat: 37.5665, lng: 127.0092, photoPosition: "right", intro: "用建筑曲面、人流和车灯完成 NIGHT 01。", tip: "不预设一定有灯光秀；人物用 1 倍，建筑可尝试 0.5 倍。", address: "281 Eulji-ro, Jung-gu" },
+  { id: "forest-real", day: 2, order: 1, name: "首尔林", korean: "서울숲", type: "景点", time: "09:30", stay: "1.5小时", x: 73, y: 68, lat: 37.5444, lng: 127.0374, photoPosition: "left", intro: "从林地、镜池和城市绿意开始第二天。", tip: "控制在 60–90 分钟，给圣水和汉江保留体力。", address: "273 Ttukseom-ro, Seongdong-gu" },
+  { id: "seongsu-real", day: 2, order: 2, name: "圣水演武场路", korean: "성수동 연무장길", type: "购物", time: "12:00", stay: "3小时", x: 80, y: 64, lat: 37.5437, lng: 127.0553, photoPosition: "center", intro: "午餐后沿红砖街区、品牌店和咖啡馆散步。", tip: "快闪信息变化快；同一天最多排一家热门店。", address: "Yeonmujang-gil, Seongdong-gu" },
+  { id: "tukseom", day: 2, order: 3, name: "纛岛汉江公园", korean: "뚝섬한강공원", type: "景点", time: "16:45", stay: "2小时", x: 86, y: 78, lat: 37.5293, lng: 127.0698, photoPosition: "right", intro: "从日落前等到桥梁与对岸灯光完全亮起。", tip: "提前日落 45–60 分钟到；江边风大，带薄外套。", address: "139 Gangbyeonbuk-ro, Gwangjin-gu" },
+  { id: "palace-real", day: 3, order: 1, name: "景福宫", korean: "경복궁", type: "景点", time: "09:00", stay: "2小时", x: 42, y: 27, lat: 37.5796, lng: 126.9770, photoPosition: "left", intro: "老城线起点，重点看勤政殿、庆会楼和宫墙。", tip: "周二闭馆；是否穿韩服以天气和舒适为先。", address: "161 Sajik-ro, Jongno-gu" },
+  { id: "samcheong", day: 3, order: 2, name: "三清洞", korean: "삼청동", type: "美食", time: "11:30", stay: "1小时", x: 50, y: 24, lat: 37.5846, lng: 126.9815, photoPosition: "center", intro: "用面片汤或简单韩餐补充体力。", tip: "排队过长就换附近餐厅，不错过北村时段。", address: "Samcheong-dong, Jongno-gu" },
+  { id: "bukchon-real", day: 3, order: 3, name: "北村韩屋村", korean: "북촌한옥마을", type: "景点", time: "13:00", stay: "1小时", x: 56, y: 22, lat: 37.5826, lng: 126.9831, photoPosition: "center", intro: "选一段能看到韩屋屋脊与城市层次的坡道。", tip: "居民区内压低音量，不堵门口，遵守现场限时。", address: "37 Gyedong-gil, Jongno-gu" },
+  { id: "ikseon", day: 3, order: 4, name: "益善洞", korean: "익선동 한옥거리", type: "美食", time: "14:30", stay: "1小时", x: 59, y: 35, lat: 37.5743, lng: 126.9897, photoPosition: "center", intro: "在韩屋巷里喝一杯，为傍晚骆山留出体力。", tip: "疲劳时删掉坐店，早点休息。", address: "Ikseon-dong, Jongno-gu" },
+  { id: "naksan", day: 3, order: 5, name: "骆山公园城墙", korean: "낙산공원", type: "景点", time: "17:00", stay: "2小时", x: 70, y: 31, lat: 37.5805, lng: 127.0074, photoPosition: "right", intro: "全程最高优先级夜景，从暮色看到城市完全亮起。", tip: "短途打车省上坡；不上墙、不跨护栏，蓝调时先拍合照。", address: "41 Naksan-gil, Jongno-gu" },
+  { id: "myeongdong-real", day: 4, order: 1, name: "明洞圣堂", korean: "명동대성당", type: "景点", time: "09:00", stay: "1小时", x: 48, y: 49, lat: 37.5632, lng: 126.9870, photoPosition: "left", intro: "返程日上午的轻量散步，用红砖建筑为行程收尾。", tip: "以外部参观为主，避开礼拜并保持安静。", address: "74 Myeongdong-gil, Jung-gu" },
+  { id: "hotel-return", day: 4, order: 2, name: "酒店取行李", korean: "호텔 체크아웃", type: "酒店", time: "11:15", stay: "45分钟", x: 63, y: 45, lat: 37.5664, lng: 127.0049, photoPosition: "center", intro: "取包、退房并在中午前正式出发。", tip: "不要把最后一小时留给购物。", address: "Travelodge Dongdaemun Seoul" },
+  { id: "port", day: 4, order: 3, name: "仁川国际码头", korean: "인천항 국제여객터미널", type: "景点", time: "15:00", stay: "登船", x: 11, y: 86, lat: 37.4225, lng: 126.5922, photoPosition: "right", intro: "地铁 1 号线至东仁川站，再打车前往国际客运码头。", tip: "不是机场也不是旧码头；至少提前 2–3 小时到港，并确认最晚报到时间。", address: "인천광역시 연수구 국제항만대로326번길 57" },
 ];
 
 const actualRoutes: RouteInfo[] = [
@@ -176,17 +178,18 @@ const dayMeta = [
   { day: 4, label: "明洞与返程", date: "10.06 · DAY 4", color: "#8b684f" },
 ];
 
-function linePath(spots: Spot[]) {
-  if (!spots.length) return "";
-  return spots.map((spot, index) => `${index ? "L" : "M"} ${spot.x} ${spot.y}`).join(" ");
-}
-
 export default function Home() {
   const [spots, setSpots] = useState<Spot[]>(() => {
     if (typeof window === "undefined") return actualSpots;
     const saved = window.localStorage.getItem("seoul-trip-spots");
     if (!saved) return actualSpots;
-    try { return JSON.parse(saved) as Spot[]; } catch { return actualSpots; }
+    try {
+      const parsed = JSON.parse(saved) as Spot[];
+      return parsed.map((spot) => {
+        const source = actualSpots.find((entry) => entry.id === spot.id);
+        return source ? { ...spot, lat: source.lat, lng: source.lng } : spot;
+      });
+    } catch { return actualSpots; }
   });
   const [activeDay, setActiveDay] = useState(1);
   const [selected, setSelected] = useState<Spot | RouteInfo | null>(null);
@@ -200,6 +203,7 @@ export default function Home() {
     try { return JSON.parse(saved) as string[]; } catch { return []; }
   });
   const [toast, setToast] = useState("");
+  const [focusNonce, setFocusNonce] = useState(0);
 
   useEffect(() => {
     const modelContext = (document as Document & { modelContext?: { registerTool: (tool: unknown, options?: { signal?: AbortSignal }) => void | Promise<void> } }).modelContext;
@@ -277,6 +281,8 @@ export default function Home() {
       stay: String(form.get("stay") || "1小时"),
       x: existing?.x ?? 50 + Math.round(Math.random() * 18 - 9),
       y: existing?.y ?? 45 + Math.round(Math.random() * 18 - 9),
+      lat: Number(form.get("lat")) || existing?.lat || 37.5665,
+      lng: Number(form.get("lng")) || existing?.lng || 126.978,
       photoPosition: existing?.photoPosition ?? "center",
       intro: String(form.get("intro") || "还没有备注。"),
       tip: String(form.get("tip") || "出发前确认开放时间与交通。"),
@@ -333,40 +339,21 @@ export default function Home() {
         <div className="map-toolbar">
           <div className="day-heading"><span>{currentDay.date}</span><h2>{currentDay.label}</h2><p>{daySpots.length} 个地点 · 预计步行 8.6 km</p></div>
           <div className="map-actions">
-            <button onClick={() => showToast("已回到当天路线范围")}><LocateFixed />定位路线</button>
+            <button onClick={() => setFocusNonce((value) => value + 1)}><LocateFixed />显示全程</button>
             <button className="primary" onClick={() => { setSelected(null); setEditOpen(true); }}><Plus />添加地点</button>
           </div>
         </div>
 
         <div className="map-canvas">
-          <div className="map-grid" />
-          <svg className="map-art" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path className="river" d="M -4 69 C 12 61, 22 76, 39 69 S 69 55, 104 63" />
-            <path className="road major" d="M 3 42 C 22 38 32 43 48 39 S 76 28 101 33" />
-            <path className="road" d="M 17 4 C 25 28 38 49 43 101" />
-            <path className="road" d="M 68 -4 C 62 22 66 48 83 101" />
-            <path className="road" d="M 4 86 C 30 77 63 83 101 76" />
-            <path className="route-shadow" d={linePath(daySpots)} />
-            <path className="route-line" d={linePath(daySpots)} style={{ stroke: currentDay.color }} />
-          </svg>
-          <span className="map-label label-jongno">钟路区<br /><small>JONGNO-GU</small></span>
-          <span className="map-label label-jung">中区<br /><small>JUNG-GU</small></span>
-          <span className="map-label label-mapogu">麻浦区<br /><small>MAPO-GU</small></span>
-          <span className="map-label label-river">汉江 · HAN RIVER</span>
-
-          {dayRoutes.map((route, index) => {
-            const a = daySpots[index]; const b = daySpots[index + 1];
-            if (!a || !b) return null;
-            return <button key={route.id} className="route-hit" aria-label={`${route.from}到${route.to}的路线`} style={{ left: `${(a.x + b.x) / 2}%`, top: `${(a.y + b.y) / 2}%` }} onClick={() => setSelected(route)}><Route size={16} /><span>{route.duration.replace("约 ", "")}</span></button>;
-          })}
-
-          {daySpots.map((spot) => (
-            <button key={spot.id} className="map-marker" style={{ left: `${spot.x}%`, top: `${spot.y}%`, "--marker": currentDay.color } as React.CSSProperties} onClick={() => setSelected(spot)} aria-label={`查看${spot.name}`}>
-              <span>{spot.order}</span><label>{spot.name}<small>{spot.time}</small></label>
-            </button>
-          ))}
-
-          <div className="map-legend"><span><i style={{ background: currentDay.color }} />当日路线</span><span><i className="spot-dot" />打卡点</span></div>
+          <TripMap
+            spots={daySpots}
+            routes={dayRoutes}
+            color={currentDay.color}
+            focusNonce={focusNonce}
+            onSpotSelect={(mapSpot) => { const spot = daySpots.find((entry) => entry.id === mapSpot.id); if (spot) setSelected(spot); }}
+            onRouteSelect={(index) => { const route = dayRoutes[index]; if (route) setSelected(route); }}
+          />
+          <div className="map-status"><span style={{ background: "#0a84ff" }} /><div><b>真实地图与道路路线</b><small>拖动、双指缩放；点标记或蓝色路线查看详情</small></div></div>
         </div>
 
         <div className="mobile-day-strip" aria-label="切换日期">
@@ -425,7 +412,7 @@ export default function Home() {
 
       <Dialog open={editOpen} onOpenChange={setEditOpen}>
         <DialogContent className="edit-dialog"><DialogHeader><DialogTitle>{selectedSpot ? "编辑地点" : "添加一个地点"}</DialogTitle><DialogDescription>先记录必要信息；地图位置之后也可以继续微调。</DialogDescription></DialogHeader><form action={saveSpot}>
-          <div className="form-grid"><label><span>地点名称</span><input name="name" required defaultValue={selectedSpot?.name} placeholder="例如：乐天世界" /></label><label><span>韩文 / 当地名称</span><input name="korean" defaultValue={selectedSpot?.korean} placeholder="可稍后补充" /></label><label><span>第几天</span><select name="day" defaultValue={selectedSpot?.day ?? activeDay}><option value="1">DAY 1</option><option value="2">DAY 2</option><option value="3">DAY 3</option><option value="4">DAY 4</option></select></label><label><span>类型</span><select name="type" defaultValue={selectedSpot?.type ?? "景点"}><option>景点</option><option>美食</option><option>购物</option><option>酒店</option></select></label><label><span>到达时间</span><input name="time" type="time" defaultValue={selectedSpot?.time === "待定" ? "" : selectedSpot?.time} /></label><label><span>建议停留</span><input name="stay" defaultValue={selectedSpot?.stay} placeholder="例如：2小时" /></label><label className="full"><span>地址</span><input name="address" defaultValue={selectedSpot?.address} placeholder="街道或韩文地址" /></label><label className="full"><span>地点介绍</span><textarea name="intro" defaultValue={selectedSpot?.intro} placeholder="为什么值得去？" /></label><label className="full"><span>旅行提示</span><textarea name="tip" defaultValue={selectedSpot?.tip} placeholder="开放时间、预约、避坑等" /></label></div><button className="save-button" type="submit"><Save />保存到行程</button>
+          <div className="form-grid"><label><span>地点名称</span><input name="name" required defaultValue={selectedSpot?.name} placeholder="例如：乐天世界" /></label><label><span>韩文 / 当地名称</span><input name="korean" defaultValue={selectedSpot?.korean} placeholder="可稍后补充" /></label><label><span>第几天</span><select name="day" defaultValue={selectedSpot?.day ?? activeDay}><option value="1">DAY 1</option><option value="2">DAY 2</option><option value="3">DAY 3</option><option value="4">DAY 4</option></select></label><label><span>类型</span><select name="type" defaultValue={selectedSpot?.type ?? "景点"}><option>景点</option><option>美食</option><option>购物</option><option>酒店</option></select></label><label><span>到达时间</span><input name="time" type="time" defaultValue={selectedSpot?.time === "待定" ? "" : selectedSpot?.time} /></label><label><span>建议停留</span><input name="stay" defaultValue={selectedSpot?.stay} placeholder="例如：2小时" /></label><label><span>纬度</span><input name="lat" type="number" step="any" defaultValue={selectedSpot?.lat ?? 37.5665} /></label><label><span>经度</span><input name="lng" type="number" step="any" defaultValue={selectedSpot?.lng ?? 126.978} /></label><label className="full"><span>地址</span><input name="address" defaultValue={selectedSpot?.address} placeholder="街道或韩文地址" /></label><label className="full"><span>地点介绍</span><textarea name="intro" defaultValue={selectedSpot?.intro} placeholder="为什么值得去？" /></label><label className="full"><span>旅行提示</span><textarea name="tip" defaultValue={selectedSpot?.tip} placeholder="开放时间、预约、避坑等" /></label></div><button className="save-button" type="submit"><Save />保存到行程</button>
         </form></DialogContent>
       </Dialog>
 
