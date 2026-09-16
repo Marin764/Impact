@@ -20,7 +20,11 @@ import {
   Plus,
   Route,
   Save,
+  ShieldCheck,
+  Shirt,
+  Ship,
   ShoppingBag,
+  Smartphone,
   Sparkles,
   TrainFront,
   Upload,
@@ -117,22 +121,52 @@ const actualRoutes: RouteInfo[] = [
   { id: "r42", day: 4, from: "酒店取行李", to: "仁川国际码头", method: "地铁 1 号线 + 出租车", duration: "2–3 小时", note: "确认仁川方向支线，到东仁川站后打车；以报到截止时间倒推。" },
 ];
 
-const essentials = [
-  "护照（确认有效期）与电子备份",
-  "韩国电子入境卡 / 所需签证材料",
-  "可境外使用的银行卡与少量韩元",
-  "T-money 交通卡",
-  "韩标转换插头（两圆脚 Type C/F）",
-  "境外流量卡 / eSIM",
-  "常用药与处方证明",
-  "舒适防滑的步行鞋",
+const checklistGroups = [
+  { title: "证件与订单", items: [
+    { id: "passport", label: "护照与韩国签证 / 电子签证打印件", note: "原件放随身包内层，护照首页另存手机与云端。" },
+    { id: "tickets", label: "去程机票与返程船票", note: "重点核对 10/6 码头、开船及最晚报到时间。" },
+    { id: "hotel", label: "酒店订单与韩文地址离线截图", note: "同时保存酒店电话。" },
+    { id: "insurance", label: "旅行保险与紧急联系方式", note: "重点看医疗、航班和行李保障。" },
+  ]},
+  { title: "手机、网络与支付", items: [
+    { id: "sim", label: "韩国实体 SIM", note: "国行 iPhone 16 Pro 不把方案建立在 eSIM 上。" },
+    { id: "apps", label: "Naver Map、Kakao T、Papago", note: "出发前登录并保存酒店、码头韩文名称。" },
+    { id: "card", label: "实体 Visa / Mastercard", note: "提前确认境外可用，不只依赖 Apple Pay。" },
+    { id: "cash", label: "每人 ₩100,000–200,000 现金", note: "用于小店、交通卡充值与应急。" },
+    { id: "tmoney", label: "落地购买并充值 T-money", note: "地铁和公交均可使用，下车也要刷卡。" },
+  ]},
+  { title: "轻装行李", items: [
+    { id: "jacket", label: "薄外套、长裤与 4 天换洗衣物", note: "10 月初偏秋季穿搭。" },
+    { id: "shoes", label: "最舒服的防滑步行鞋", note: "Citywalk 体验最受鞋影响。" },
+    { id: "adapter", label: "220V 两圆脚转换插头", note: "韩国常见 Type C / F 插座。" },
+    { id: "power", label: "充电宝、USB-C 线与手表充电器", note: "导航、翻译和夜景拍摄耗电明显。" },
+    { id: "medicine", label: "肠胃药、止痛药、创可贴", note: "处方药保留原包装与证明。" },
+    { id: "rain", label: "折叠伞与轻便斜挎包", note: "随身包以有拉链、轻便为主。" },
+  ]},
+  { title: "实用购物", items: [
+    { id: "clothes", label: "MUSINSA 基础衣物 / 首尔主题 T 恤", note: "建议 ¥80–300/件，版型合适再买。" },
+    { id: "souvenir", label: "Daiso 小纪念 1–2 个", note: "传统图案钥匙扣、小袋或笔记本，轻且好带。" },
+    { id: "museum", label: "顺路时买一件博物馆文创", note: "书签、地图笔记本等，不专门绕路。" },
+    { id: "snacks", label: "试吃后再买少量零食", note: "海苔、薯片、饼干先买小包装。" },
+  ]},
+  { title: "护肤采购", items: [
+    { id: "cleanser", label: "洁面：ROUND LAB 1025 Dokdo", note: "现有洁面好用就不重复买，参考约 ¥60。" },
+    { id: "sunscreen", label: "防晒：ROUND LAB Birch Juice", note: "Citywalk 比多一瓶精华更需要防晒，参考约 ¥110。" },
+    { id: "cream", label: "保湿霜：Torriden / AESTURA 二选一", note: "混合肌选轻薄，偏干选滋润；不要同时囤。" },
+    { id: "lip", label: "按需购买润唇或面膜", note: "体验项，不为凑满预算硬买。" },
+  ]},
 ];
 
+const checklistTotal = checklistGroups.reduce((total, group) => total + group.items.length, 0);
+
 const travelNotes = [
-  { title: "入境前", body: "确认护照、签证/免签政策、返程机票和住宿信息。政策会变化，出发前以官方最新信息为准。", icon: Plane },
-  { title: "支付与退税", body: "大多数门店可刷卡，但传统市场备少量现金更稳妥。购物时主动询问即时退税或机场退税流程。", icon: WalletCards },
-  { title: "交通", body: "公交下车也要刷交通卡。地铁换乘距离可能较长，赶时间时预留 10–15 分钟。", icon: TrainFront },
-  { title: "沟通与礼仪", body: "准备韩文地址截图；餐馆可用翻译软件。乘扶梯、排队和居民区拍摄时留意现场规则。", icon: Info },
+  { title: "出发前 3–7 天", body: "核对签证姓名与有效期、去程机票、返程船票、酒店订单和首尔天气；把基础行程留给家人。", icon: ShieldCheck },
+  { title: "国行 iPhone 网络", body: "准备韩国实体 SIM，保留中国 SIM 接短信并关闭数据漫游。AirPods 可配合 Papago 或 Google 翻译，无需为旅行换设备。", icon: Smartphone },
+  { title: "支付方案", body: "实体 Visa / Mastercard 作主力，Apple Pay 只作辅助；每人准备约 ₩100,000–200,000 韩元现金。", icon: WalletCards },
+  { title: "落地仁川机场", body: "先确认 SIM 能联网，再购买 T-money。两人轻装可优先搭 6001 机场巴士去东大门，不必专门订车。", icon: Plane },
+  { title: "Citywalk 穿搭", body: "10 月初准备薄外套、长裤、舒适防滑鞋和折叠伞。每天步行多，鞋和包比多带备用衣物更重要。", icon: Shirt },
+  { title: "10 月 6 日坐船", body: "前一晚再次确认船公司、码头、开船与最晚报到时间；中午左右离开首尔，目标约 15:00 到仁川港。", icon: Ship },
+  { title: "购物控制", body: "建议衣物、小纪念和零食约 ¥300–500/人；护肤单列预算，基础三件套约 ¥270–330，不为凑满 ¥600 硬买。", icon: ShoppingBag },
 ];
 
 const dayMeta = [
@@ -288,7 +322,7 @@ export default function Home() {
         </nav>
         <div className="side-tools">
           <button onClick={() => setPanel("notes")}><CircleAlert />出国提醒</button>
-          <button onClick={() => setPanel("packing")}><ShoppingBag />购买清单 <span>{checked.length}/{essentials.length}</span></button>
+          <button onClick={() => setPanel("packing")}><ShoppingBag />备忘与购物 <span>{checked.length}/{checklistTotal}</span></button>
           <button onClick={() => { setSelected(null); setEditOpen(true); }}><Plus />添加地点</button>
           <button onClick={exportPlan}><Download />导出行程</button>
         </div>
@@ -379,14 +413,14 @@ export default function Home() {
 
       <Sheet open={!!panel} onOpenChange={(open) => !open && setPanel(null)}>
         <SheetContent side="right" className="info-sheet">
-          <SheetHeader><SheetTitle>{panel === "packing" ? "出发购买清单" : "第一次出国提醒"}</SheetTitle><SheetDescription>{panel === "packing" ? `已准备 ${checked.length} / ${essentials.length} 项，勾选会自动保存在本机。` : "出发前、在机场和韩国当地最容易忘记的几件事。"}</SheetDescription></SheetHeader>
-          {panel === "packing" ? <div className="packing-list">{essentials.map((item) => <label key={item}><Checkbox checked={checked.includes(item)} onCheckedChange={(value) => togglePacked(item, value === true)} /><span className={checked.includes(item) ? "done" : ""}>{item}</span></label>)}</div> : <div className="notes-list">{travelNotes.map(({ title, body, icon: Icon }) => <article key={title}><Icon /><div><b>{title}</b><p>{body}</p></div></article>)}</div>}
+          <SheetHeader><SheetTitle>{panel === "packing" ? "备忘与购物清单" : "第一次出国提醒"}</SheetTitle><SheetDescription>{panel === "packing" ? `已准备 ${checked.length} / ${checklistTotal} 项，勾选会自动保存在本机。` : "根据你们的设备、交通与返程方式整理的关键提醒。"}</SheetDescription></SheetHeader>
+          {panel === "packing" ? <div className="packing-groups">{checklistGroups.map((group) => <section key={group.title}><h3>{group.title}</h3><div className="packing-list">{group.items.map((item) => <label key={item.id}><Checkbox checked={checked.includes(item.id)} onCheckedChange={(value) => togglePacked(item.id, value === true)} /><span className={checked.includes(item.id) ? "done" : ""}><b>{item.label}</b><small>{item.note}</small></span></label>)}</div></section>)}<div className="shopping-budget"><b>建议购物上限</b><div><span>普通购物<em>¥300–500 / 人</em></span><span>基础护肤<em>约 ¥270–330</em></span></div><p>先试、再买；不把购物变成旅行任务。</p></div></div> : <div className="notes-list">{travelNotes.map(({ title, body, icon: Icon }) => <article key={title}><Icon /><div><b>{title}</b><p>{body}</p></div></article>)}</div>}
           <div className="info-foot"><Info /><p>涉及入境与签证的内容会随政策变化。临行前请再次查看官方信息。</p></div>
         </SheetContent>
       </Sheet>
 
       <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-        <SheetContent side="right" className="menu-sheet"><SheetHeader><SheetTitle>行程工具</SheetTitle><SheetDescription>管理与备份你的旅行计划</SheetDescription></SheetHeader><div className="menu-list"><button onClick={() => { setMenuOpen(false); setPanel("notes"); }}><CircleAlert />出国提醒<ChevronRight /></button><button onClick={() => { setMenuOpen(false); setPanel("packing"); }}><ShoppingBag />购买清单<ChevronRight /></button><button onClick={() => { setMenuOpen(false); setSelected(null); setEditOpen(true); }}><Plus />添加地点<ChevronRight /></button><button onClick={exportPlan}><Download />导出 JSON 行程<ChevronRight /></button><label className="fake-upload"><Upload />导入行程文件<input type="file" accept=".json" onChange={(event) => { const file = event.target.files?.[0]; if (!file) return; const reader = new FileReader(); reader.onload = () => { try { const data = JSON.parse(String(reader.result)); if (Array.isArray(data.spots)) { persist(data.spots); setMenuOpen(false); } else throw new Error(); } catch { showToast("暂时只支持本站导出的 JSON 文件"); } }; reader.readAsText(file); }} /><ChevronRight /></label></div><div className="import-note"><Upload /><div><b>稍后发我 PDF 或 HTML</b><p>我会按你的正式计划核对地点、路线和顺序，再帮你精准标到地图里。</p></div></div></SheetContent>
+        <SheetContent side="right" className="menu-sheet"><SheetHeader><SheetTitle>行程工具</SheetTitle><SheetDescription>管理与备份你的旅行计划</SheetDescription></SheetHeader><div className="menu-list"><button onClick={() => { setMenuOpen(false); setPanel("notes"); }}><CircleAlert />出国提醒<ChevronRight /></button><button onClick={() => { setMenuOpen(false); setPanel("packing"); }}><ShoppingBag />备忘与购物<ChevronRight /></button><button onClick={() => { setMenuOpen(false); setSelected(null); setEditOpen(true); }}><Plus />添加地点<ChevronRight /></button><button onClick={exportPlan}><Download />导出 JSON 行程<ChevronRight /></button><label className="fake-upload"><Upload />导入行程文件<input type="file" accept=".json" onChange={(event) => { const file = event.target.files?.[0]; if (!file) return; const reader = new FileReader(); reader.onload = () => { try { const data = JSON.parse(String(reader.result)); if (Array.isArray(data.spots)) { persist(data.spots); setMenuOpen(false); } else throw new Error(); } catch { showToast("暂时只支持本站导出的 JSON 文件"); } }; reader.readAsText(file); }} /><ChevronRight /></label></div><div className="import-note"><Check /><div><b>两份正式计划均已整理</b><p>4 天路线、第一次出国提醒、行李与购物清单已经合并到当前工具。</p></div></div></SheetContent>
       </Sheet>
 
       <Dialog open={editOpen} onOpenChange={setEditOpen}>

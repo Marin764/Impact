@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>第一次出国去首尔｜备忘清单 + 购物清单</title>
+<style>
+:root{
+  --bg:#eef2f1; --paper:#fffdf8; --ink:#22343a; --sub:#6b7a7d; --line:#dbe3df;
+  --green:#1f6c66; --green2:#dfece8; --warm:#b36e45; --warm2:#f5e9df; --blue:#315d73;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+a{color:var(--green);text-decoration:none}
+.wrap{max-width:920px;margin:0 auto;padding:18px}
+.hero{background:linear-gradient(135deg,#1f6c66,#2f4f59);color:#fff;border-radius:22px;padding:28px 26px;box-shadow:0 10px 30px rgba(29,62,67,.14)}
+.hero .eyebrow{font-size:12px;letter-spacing:.16em;opacity:.78}
+.hero h1{font-size:30px;line-height:1.25;margin:8px 0 10px}
+.hero p{margin:0;opacity:.9}
+.trip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+.trip div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:10px}
+.trip b,.trip span{display:block}.trip b{font-size:14px}.trip span{font-size:11px;opacity:.78;margin-top:2px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 0}
+button{border:0;border-radius:10px;padding:9px 12px;background:#fff;color:#29424a;font-weight:700;cursor:pointer}
+button.secondary{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.24)}
+.nav{position:sticky;top:0;z-index:10;background:rgba(238,242,241,.94);backdrop-filter:blur(12px);padding:10px 0;margin:4px 0 8px;display:flex;gap:8px;overflow:auto}
+.nav a{white-space:nowrap;background:#fff;border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:12px;color:#41555a}
+.card{background:var(--paper);border:1px solid rgba(31,108,102,.10);border-radius:18px;padding:22px;margin:14px 0;box-shadow:0 4px 15px rgba(45,68,69,.05)}
+h2{font-size:21px;margin:0 0 14px}h3{font-size:15px;margin:18px 0 8px;color:#2e4d53}
+.note{background:var(--green2);border-left:4px solid var(--green);padding:12px 14px;border-radius:10px;margin:12px 0;font-size:13px}
+.warn{background:var(--warm2);border-left-color:var(--warm)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.checklist{display:grid;gap:7px}
+.item{display:flex;gap:10px;align-items:flex-start;padding:9px 10px;border-radius:10px;background:#fff;border:1px solid #e6ece8}
+.item input{margin-top:4px;transform:scale(1.08);accent-color:var(--green)}
+.item label{flex:1;font-size:13px}.item small{display:block;color:var(--sub);margin-top:2px}
+.badge{display:inline-block;border-radius:999px;padding:2px 7px;font-size:10px;font-weight:700;margin-left:6px;vertical-align:1px}
+.badge.must{background:#dceee7;color:#1d675e}.badge.opt{background:#eee9df;color:#7f633c}.badge.verify{background:#f3dfd4;color:#935738}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;min-width:720px;background:#fff}
+th,td{text-align:left;padding:10px 11px;border-bottom:1px solid #e7ece9;vertical-align:top;font-size:12px}
+th{background:#edf3f0;color:#365459;position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+.price{white-space:nowrap;font-weight:700;color:#925d3d}.rank{font-weight:800;color:var(--green)}
+.budget{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0}
+.budget div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+.budget b{display:block;font-size:18px;color:var(--green)}.budget span{font-size:11px;color:var(--sub)}
+.kicker{font-size:11px;color:var(--green);font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.footer{color:#708083;font-size:11px;padding:12px 6px 36px;text-align:center}
+@media(max-width:720px){.wrap{padding:12px}.hero{padding:22px 18px}.hero h1{font-size:25px}.trip{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.budget{grid-template-columns:1fr}.card{padding:17px}.nav{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}.hero,.card{box-shadow:none;border-radius:0}.nav,.toolbar{display:none}.card{break-inside:avoid;margin:0;border-top:0}.hero{border-radius:0}.item{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">SEOUL FIRST TRIP · 2026.10.03—10.06</div>
+    <h1>第一次出国去首尔<br>备忘清单 + 购物清单</h1>
+    <p>按你们目前计划整理：两位刚毕业的男生同学、东大门住宿、citywalk + 城市夜景为主、购物适量、10/6 晚船离境。</p>
+    <div class="trip">
+      <div><b>10/3 下午</b><span>仁川机场抵达</span></div>
+      <div><b>住东大门</b><span>Travelodge 一带</span></div>
+      <div><b>10/6 18:00</b><span>拟从仁川港坐船</span></div>
+      <div><b>轻装出行</b><span>主要一个包</span></div>
+    </div>
+    <div class="toolbar">
+      <button onclick="window.print()">打印 / 存为 PDF</button>
+      <button class="secondary" onclick="resetChecks()">清空勾选</button>
+    </div>
+  </section>
+
+  <nav class="nav">
+    <a href="#before">出发前</a><a href="#documents">证件</a><a href="#phone">手机网络</a><a href="#money">支付</a><a href="#packing">行李</a><a href="#arrival">落地</a><a href="#return">返程</a><a href="#shopping">购物</a><a href="#skincare">护肤</a><a href="#budget">预算</a>
+  </nav>
+
+  <section class="card" id="before">
+    <div class="kicker">01 / 出发前 3—7 天</div>
+    <h2>最后一次总检查</h2>
+    <div class="grid2">
+      <div class="checklist">
+        <div class="item"><input type="checkbox" id="c1"><label for="c1"><b>确认韩国签证已出签并打印 / 保存电子版</b><small>护照上的信息、姓名拼音、有效期都看一遍。</small></label></div>
+        <div class="item"><input type="checkbox" id="c2"><label for="c2"><b>确认去程机票与返程船票</b><small>尤其是 10/6 的码头、开船时间、最晚报到时间。</small></label></div>
+        <div class="item"><input type="checkbox" id="c3"><label for="c3"><b>酒店订单保存离线截图</b><small>英文/韩文酒店名、地址、电话最好都保存。</small></label></div>
+        <div class="item"><input type="checkbox" id="c4"><label for="c4"><b>查看首尔天气</b><small>10 月初偏秋季穿搭：薄外套 + 长裤 + 舒适鞋。</small></label></div>
+      </div>
+      <div class="checklist">
+        <div class="item"><input type="checkbox" id="c5"><label for="c5"><b>银行卡提前确认境外可用</b><small>至少一张实体 Visa / Mastercard，不只依赖 Apple Pay。</small></label></div>
+        <div class="item"><input type="checkbox" id="c6"><label for="c6"><b>购买旅行保险</b><small>重点看医疗、航班/行李、突发情况保障。</small></label></div>
+        <div class="item"><input type="checkbox" id="c7"><label for="c7"><b>把重要资料存两份</b><small>手机相册一份，云盘/邮箱一份；护照首页不要只存在一个设备里。</small></label></div>
+        <div class="item"><input type="checkbox" id="c8"><label for="c8"><b>给家人/朋友留基础行程</b><small>酒店、航班、船班和大概回程时间即可。</small></label></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" id="documents">
+    <div class="kicker">02 / 随身证件</div>
+    <h2>这些一定放随身包，不托运</h2>
+    <div class="checklist">
+      <div class="item"><input type="checkbox" id="d1"><label for="d1"><b>护照</b><span class="badge must">必须</span><small>入境、酒店、退税、离境都会用。</small></label></div>
+      <div class="item"><input type="checkbox" id="d2"><label for="d2"><b>韩国签证 / 电子签证打印件</b><span class="badge must">必须</span></label></div>
+      <div class="item"><input type="checkbox" id="d3"><label for="d3"><b>往返交通订单</b><small>去程机票 + 返程船票/预约信息。</small></label></div>
+      <div class="item"><input type="checkbox" id="d4"><label for="d4"><b>酒店订单</b><small>最好同时保留中文、英文/韩文地址。</small></label></div>
+      <div class="item"><input type="checkbox" id="d5"><label for="d5"><b>身份证</b><small>在韩国不是核心证件，但国内返程、高铁等可能用到。</small></label></div>
+      <div class="item"><input type="checkbox" id="d6"><label for="d6"><b>旅行保险保单 / 紧急联系方式</b></label></div>
+    </div>
+    <div class="note warn"><b>第一次出国的小技巧：</b>护照不要每天塞裤兜。放在有拉链的随身包内层；手机里保存护照首页照片，但照片不能替代护照原件。</div>
+  </section>
+
+  <section class="card" id="phone">
+    <div class="kicker">03 / 手机 · 网络 · App</div>
+    <h2>你这台国行 iPhone 16 Pro 的实用方案</h2>
+    <div class="grid2">
+      <div>
+        <h3>网络</h3>
+        <div class="checklist">
+          <div class="item"><input type="checkbox" id="p1"><label for="p1"><b>准备韩国实体 SIM</b><small>你的国行 iPhone 16 Pro 不要把计划建立在 eSIM 上。</small></label></div>
+          <div class="item"><input type="checkbox" id="p2"><label for="p2"><b>保留中国 SIM 接短信</b><small>关闭数据漫游，避免误产生高额流量。</small></label></div>
+          <div class="item"><input type="checkbox" id="p3"><label for="p3"><b>充电宝 + 充电线</b><small>全天导航、拍照、翻译会明显耗电。</small></label></div>
+        </div>
+      </div>
+      <div>
+        <h3>提前安装</h3>
+        <div class="checklist">
+          <div class="item"><input type="checkbox" id="p4"><label for="p4"><b>Naver Map</b><small>韩国本地导航主力。</small></label></div>
+          <div class="item"><input type="checkbox" id="p5"><label for="p5"><b>KakaoMap / Kakao T</b><small>地图备用、打车。</small></label></div>
+          <div class="item"><input type="checkbox" id="p6"><label for="p6"><b>Papago + Google 翻译</b><small>韩语场景、拍照翻译和对话翻译互相补充。</small></label></div>
+          <div class="item"><input type="checkbox" id="p7"><label for="p7"><b>离线保存酒店、码头韩文名称</b></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="note"><b>AirPods 翻译：</b>你现有国行 AirPods 可以继续用 Google 翻译 / Papago 场景；不用为了这次旅行单独换耳机。Apple 原生实时翻译的瓶颈主要在国行 iPhone 的 Apple Intelligence 可用性。</div>
+  </section>
+
+  <section class="card" id="money">
+    <div class="kicker">04 / 支付与现金</div>
+    <h2>不要只靠一种支付方式</h2>
+    <div class="checklist">
+      <div class="item"><input type="checkbox" id="m1"><label for="m1"><b>实体 Mastercard / Visa 信用卡</b><span class="badge must">主力</span><small>比单纯依赖手机支付稳妥。</small></label></div>
+      <div class="item"><input type="checkbox" id="m2"><label for="m2"><b>少量韩元现金</b><small>建议每人先准备约 ₩100,000—200,000 的量级，主要用于小店、充值、应急。</small></label></div>
+      <div class="item"><input type="checkbox" id="m3"><label for="m3"><b>T-money 交通卡</b><small>落地后购买并充值，地铁/公交更省事。</small></label></div>
+      <div class="item"><input type="checkbox" id="m4"><label for="m4"><b>Apple Pay 当辅助</b><small>能刷就用，但不要把它当唯一支付方式。</small></label></div>
+    </div>
+  </section>
+
+  <section class="card" id="packing">
+    <div class="kicker">05 / 行李</div>
+    <h2>你们轻装 citywalk，够用即可</h2>
+    <div class="grid2">
+      <div>
+        <h3>衣物</h3>
+        <div class="checklist">
+          <div class="item"><input type="checkbox" id="l1"><label for="l1">薄外套 / 卫衣</label></div>
+          <div class="item"><input type="checkbox" id="l2"><label for="l2">长裤 1—2 条</label></div>
+          <div class="item"><input type="checkbox" id="l3"><label for="l3">最舒服的运动鞋 / 休闲鞋</label></div>
+          <div class="item"><input type="checkbox" id="l4"><label for="l4">内衣袜子按 4 天准备</label></div>
+          <div class="item"><input type="checkbox" id="l5"><label for="l5">折叠伞 / 轻便雨具</label></div>
+        </div>
+      </div>
+      <div>
+        <h3>小物</h3>
+        <div class="checklist">
+          <div class="item"><input type="checkbox" id="l6"><label for="l6">220V 两圆脚转换插头<span class="badge must">建议</span></label></div>
+          <div class="item"><input type="checkbox" id="l7"><label for="l7">充电宝、USB-C 线、Apple Watch 充电器</label></div>
+          <div class="item"><input type="checkbox" id="l8"><label for="l8">常用药：肠胃、止痛、创可贴等</label></div>
+          <div class="item"><input type="checkbox" id="l9"><label for="l9">纸巾、湿巾、小袋装洗漱品</label></div>
+          <div class="item"><input type="checkbox" id="l10"><label for="l10">一个轻便斜挎/胸包<span class="badge opt">推荐</span></label></div>
+        </div>
+      </div>
+    </div>
+    <div class="note"><b>你们这种行程最重要的不是带全，而是轻：</b>每天会走很多路，鞋和包比“多带一件备用衣服”更影响体验。</div>
+  </section>
+
+  <section class="card" id="arrival">
+    <div class="kicker">06 / 10 月 3 日落地后</div>
+    <h2>仁川机场 → 东大门</h2>
+    <div class="checklist">
+      <div class="item"><input type="checkbox" id="a1"><label for="a1"><b>入境后先解决网络</b><small>SIM 能正常上网后再离开机场。</small></label></div>
+      <div class="item"><input type="checkbox" id="a2"><label for="a2"><b>买 / 充值 T-money</b></label></div>
+      <div class="item"><input type="checkbox" id="a3"><label for="a3"><b>机场大巴优先</b><small>你们两人、一个包，通常没有必要为了这段路专门订携程专车。</small></label></div>
+      <div class="item"><input type="checkbox" id="a4"><label for="a4"><b>到酒店先放包，再开始第一晚行程</b><small>第一晚重点是广藏市场 / 清溪川 / DDP 夜景，别刚落地就跨城。</small></label></div>
+    </div>
+  </section>
+
+  <section class="card" id="return">
+    <div class="kicker">07 / 10 月 6 日返程</div>
+    <h2>坐船离境：宁愿早到，不要卡点</h2>
+    <div class="checklist">
+      <div class="item"><input type="checkbox" id="r1"><label for="r1"><b>前一晚再次确认船票</b><span class="badge verify">需核对</span><small>船公司、码头、18:00 是否仍为最终开船时间、最晚报到时间。</small></label></div>
+      <div class="item"><input type="checkbox" id="r2"><label for="r2"><b>中午左右离开首尔市区</b><small>目标是约 15:00 左右到仁川港国际客运码头。</small></label></div>
+      <div class="item"><input type="checkbox" id="r3"><label for="r3"><b>保存码头韩文</b><small>인천항 국제여객터미널</small></label></div>
+      <div class="item"><input type="checkbox" id="r4"><label for="r4"><b>返程日上午只安排轻行程</b><small>睡晚 / 下雨 / 累了就直接删掉，不挤压登船缓冲。</small></label></div>
+    </div>
+    <div class="note warn"><b>别混淆：</b>仁川机场和仁川港都在仁川，但不是同一个地方。你们这趟住宿继续放在东大门更合适。</div>
+  </section>
+
+  <section class="card" id="shopping">
+    <div class="kicker">08 / 购物清单</div>
+    <h2>少买但买得到位：穿的 + 小纪念 + 零食</h2>
+    <p style="color:var(--sub);font-size:12px;margin-top:-7px">价格只做预算参考，以你们 10 月到店实际售价、库存和活动为准。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>优先级</th><th>推荐买什么</th><th>哪里看</th><th>预算参考</th><th>为什么适合你们</th></tr></thead>
+        <tbody>
+          <tr><td class="rank">A</td><td><b>基础 T 恤 / 卫衣 / 直筒裤</b></td><td>MUSINSA STANDARD</td><td class="price">¥80—300/件</td><td>两个刚毕业男生最实用，版型合适就买一件，不用追 Logo。</td></tr>
+          <tr><td class="rank">A</td><td><b>首尔主题定制 T 恤</b></td><td>MUSINSA STANDARD 明洞中央店</td><td class="price">约 ¥150/件起</td><td>比普通纪念衫更有“这趟旅行”的意义，你们可以同主题不同图案。</td></tr>
+          <tr><td class="rank">A</td><td><b>传统图案钥匙扣 / 小袋 / 笔记本</b></td><td>Daiso 大创</td><td class="price">约 ¥5—20/件</td><td>轻、便宜、好带，最适合你们这种少行李。</td></tr>
+          <tr><td class="rank">B</td><td><b>博物馆文创：书签 / 键帽钥匙扣 / 地图笔记本</b></td><td>MU:DS</td><td class="price">约 ¥10—100</td><td>如果正好逛博物馆就买，不要专门绕路。</td></tr>
+          <tr><td class="rank">B</td><td><b>韩国零食 / 海苔 / 薯片 / 饼干</b></td><td>便利店 / 超市</td><td class="price">¥50—100/人</td><td>先买小包装尝，再决定要不要带回；别一开始买大箱。</td></tr>
+          <tr><td class="rank">C</td><td>鞋、帽子、香水、设计师潮牌</td><td>圣水 / 明洞等</td><td class="price">按需</td><td>不是“韩国必买”。超过原预算时先查国内同款价格再决定。</td></tr>
+          <tr><td class="rank">C</td><td>新 iPhone / AirPods</td><td>Apple Store</td><td class="price">高预算</td><td>可以现场体验，但不要为了旅行翻译功能强行换设备。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card" id="skincare">
+    <div class="kicker">09 / 护肤购物</div>
+    <h2>¥500—600 的正确买法：基础三件套优先</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>优先级</th><th>产品类型</th><th>之前提到的候选</th><th>预算参考</th><th>怎么选</th></tr></thead>
+        <tbody>
+          <tr><td class="rank">A</td><td><b>洁面</b></td><td>ROUND LAB 1025 Dokdo Cleanser</td><td class="price">约 ¥60</td><td>现有洁面好用就不用为旅行重复买。</td></tr>
+          <tr><td class="rank">A</td><td><b>防晒</b></td><td>ROUND LAB Birch Juice Moisturizing Sunscreen</td><td class="price">约 ¥110</td><td>你们 citywalk 多，防晒比“多一瓶精华”更实用。</td></tr>
+          <tr><td class="rank">A</td><td><b>保湿霜 · 轻薄</b></td><td>Torriden DIVE-IN Soothing Cream</td><td class="price">约 ¥90—100</td><td>偏油 / 混合肌、怕厚重可优先试。</td></tr>
+          <tr><td class="rank">A</td><td><b>保湿霜 · 偏干</b></td><td>AESTURA ATOBARRIER365 Cream</td><td class="price">约 ¥150</td><td>如果洗完脸容易紧绷、起皮，可与 Torriden 二选一。</td></tr>
+          <tr><td class="rank">B</td><td><b>润唇</b></td><td>Torriden SOLID-IN Ceramide Lip Essence</td><td class="price">约 ¥35</td><td>嘴唇干再买，两个人都需要时再看双支装。</td></tr>
+          <tr><td class="rank">B</td><td><b>面膜</b></td><td>Torriden DIVE-IN Mask</td><td class="price">约 ¥80/盒</td><td>体验项，不是必需；没敷面膜习惯就跳过。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><b>建议买法：</b>洁面 + 防晒 + 1 款面霜，大约 ¥270—330；再加润唇 / 面膜，也大多能控制在 ¥400—450。剩下的钱不用为了“凑满 600”硬加精华、眼霜。</div>
+    <div class="note warn"><b>旅行中别一次性把整套护肤全换掉：</b>新产品回去后逐个试更稳。尤其你们这次每天步行多、作息可能乱，突然全换容易分不清哪样不适合。</div>
+  </section>
+
+  <section class="card" id="budget">
+    <div class="kicker">10 / 购物预算示例</div>
+    <h2>如果希望“有购物感，但不让购物吃掉旅行”</h2>
+    <div class="budget">
+      <div><b>¥300 左右 / 人</b><span>1 件衣服 + 1 个小纪念 + 少量零食</span></div>
+      <div><b>¥500 左右 / 人</b><span>衣服 + 文创 + 零食，已经很够</span></div>
+      <div><b>护肤 ¥500—600</b><span>建议当独立预算；基础三件套通常花不满</span></div>
+    </div>
+    <h3>一个很适合你们的组合</h3>
+    <div class="checklist">
+      <div class="item"><input type="checkbox" id="b1"><label for="b1">一件 MUSINSA STANDARD 衣服 / 定制 T 恤</label></div>
+      <div class="item"><input type="checkbox" id="b2"><label for="b2">Daiso 小纪念 1—2 个</label></div>
+      <div class="item"><input type="checkbox" id="b3"><label for="b3">真正喜欢的博物馆文创 1 件（如果顺路）</label></div>
+      <div class="item"><input type="checkbox" id="b4"><label for="b4">先试吃，再买少量零食带回</label></div>
+      <div class="item"><input type="checkbox" id="b5"><label for="b5">护肤只补自己缺的，不“成套扫货”</label></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="kicker">11 / 两个人怎么分工最省心</div>
+    <h2>一个管路线，一个管资料</h2>
+    <div class="grid2">
+      <div class="note"><b>A 同学：</b>Naver Map、地铁/公交路线、打车、夜景点导航。</div>
+      <div class="note"><b>B 同学：</b>护照/签证/订单、餐厅候选、返程船票与码头报到时间。</div>
+    </div>
+    <p style="font-size:12px;color:var(--sub)">两个人都保存一份酒店和码头信息。这样哪怕一个人手机没电，也不会整个行程失去导航。</p>
+  </section>
+
+  <div class="footer">本清单按当前已讨论行程整理。购物价格、营业状态、船班与报到时间均应以 2026 年 10 月出发前的实际信息为准。</div>
+</div>
+<script>
+const boxes=[...document.querySelectorAll('input[type=checkbox]')];
+boxes.forEach(b=>{const k='seoul_check_'+b.id;b.checked=localStorage.getItem(k)==='1';b.addEventListener('change',()=>localStorage.setItem(k,b.checked?'1':'0'));});
+function resetChecks(){boxes.forEach(b=>{b.checked=false;localStorage.removeItem('seoul_check_'+b.id);});}
+</script>
+</body>
+</html>
