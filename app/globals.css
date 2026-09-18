@@ -77,7 +77,10 @@ button { color: inherit; }
 .trip-title { display: flex; flex-direction: column; line-height: 1.2; }
 .trip-title span { font-size: 11px; letter-spacing: .16em; color: #a8cbc4; }
 .trip-title strong { font-size: 16px; letter-spacing: .05em; }
-.weather-chip { margin-left: auto; display: flex; align-items: center; gap: 9px; border: 1px solid #ffffff24; background: #ffffff10; padding: 8px 13px; border-radius: 12px; font-size: 13px; color: #cfe3df; }
+.trip-switch { margin-left: auto; display: flex; padding: 3px; border: 1px solid #ffffff24; border-radius: 12px; background: #082e2a66; }
+.trip-switch button { min-width: 54px; border: 0; border-radius: 9px; padding: 7px 11px; background: transparent; color: #b8d3ce; font-size: 13px; font-weight: 700; cursor: pointer; }
+.trip-switch button.active { background: #f5c55c; color: #193831; box-shadow: 0 3px 12px #061e1a45; }
+.weather-chip { display: flex; align-items: center; gap: 9px; border: 1px solid #ffffff24; background: #ffffff10; padding: 8px 13px; border-radius: 12px; font-size: 13px; color: #cfe3df; }
 .weather-chip b { color: #fff; margin-right: 4px; }
 .icon-btn { border: 0; background: transparent; color: #fff; padding: 8px; cursor: pointer; }
 .mobile-only { display: none; }
@@ -177,7 +180,8 @@ button { color: inherit; }
   .topbar { height: 67px; padding: 0 16px; }
   .brand-mark { width: 35px; height: 35px; font-size: 20px; }
   .trip-title span { font-size: 9px; }.trip-title strong { font-size: 14px; }
-  .weather-chip { border: 0; background: transparent; padding: 5px; margin-left: auto; }.weather-chip span { display: none; }
+  .trip-switch { margin-left: auto; padding: 2px; border-radius: 10px; }.trip-switch button { min-width: 42px; padding: 6px 8px; font-size: 12px; }
+  .weather-chip { display: none; }
   .mobile-only { display: block; }
   .desktop-sidebar { display: none; }
   .map-workspace { min-height: calc(100dvh - 67px); height: auto; display: grid; grid-template-rows: auto minmax(340px, 52dvh) auto auto; padding-bottom: calc(18px + env(safe-area-inset-bottom)); }
