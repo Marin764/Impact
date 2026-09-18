@@ -132,13 +132,13 @@ const actualRoutes: RouteInfo[] = [
 const dalianSpots: Spot[] = [
   { id: "dl-north-arrive", day: 1, order: 1, name: "大连北站", korean: "抵达大连", type: "景点", time: "16:41", stay: "20分钟", x: 50, y: 45, lat: 39.0152, lng: 121.6027, photoPosition: "center", photo: "/places/dalian/dalian-north.jpg", photoSource: "https://commons.wikimedia.org/wiki/File:Dalian_North_Railway_Station_2017.jpg", photoCredit: "Baycrest / Wikimedia Commons", intro: "抵达后直接从南广场地下进入地铁，第一晚只安排入住、海鲜和西安路散步，不把行程塞满。", tip: "下车先确认返程检票口和地铁入口；地铁 1 号线往河口方向可直达西安路。", address: "大连市甘井子区华北路" },
   { id: "dl-hotel-1", day: 1, order: 2, name: "西安路酒店", korean: "西安路站附近", type: "酒店", time: "17:40", stay: "办理入住", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "两晚都住西安路站附近：去星海、体育中心和大连北站都能坐地铁直达或少换乘。", tip: "到店后立刻确认周日能否寄存或快速退房；把酒店门牌和电话截图。", address: "大连地铁西安路站附近" },
-  { id: "dl-seafood-1", day: 1, order: 3, name: "老大连海鲜晚餐", korean: "西安路店", type: "美食", time: "18:40", stay: "1.5小时", x: 50, y: 45, lat: 38.9170, lng: 121.5968, photoPosition: "center", photo: "/places/dalian/seafood.jpg", photoSource: "https://us.trip.com/restaurant/china/dalian/detail/restaurant-133602295/", photoCredit: "携程用户实拍", intro: "第一顿集中体验海肠捞饭、海胆水饺或烤生蚝。一个人建议只点一份主食加一份小海鲜，避免东北菜分量过大。", tip: "参考店为同泰街 91 号的老大连·大连海鲜大连菜；周五晚可能排队，到店前先在线取号并核对最新地址。", address: "沙河口区同泰街91号" },
+  { id: "dl-seafood-1", day: 1, order: 3, name: "海胆水饺·单人晚餐", korean: "包鲜盛西安路店", type: "美食", time: "18:40", stay: "1小时", x: 50, y: 45, lat: 38.9194, lng: 121.5915, photoPosition: "center", photo: "/places/dalian/seafood.jpg", photoSource: "https://us.trip.com/restaurant/china/dalian/detail/restaurant-133042926", photoCredit: "携程餐厅资料图", intro: "第一顿改成更适合独食的水饺店：优先点半份海胆水饺或海胆小笼包，不需要为了尝海鲜凑一桌大菜。没吃饱再加一份普通水饺或小笼包。", tip: "参考店为民政街 394 号的包鲜盛。进店先确认能否点半份、是否需要拼桌；排队超过 20 分钟就去长兴里按份买焖子、烤鱿鱼或包子。", address: "沙河口区民政街394号（出发前再核对）" },
   { id: "dl-xian-night", day: 1, order: 4, name: "西安路夜逛", korean: "商圈与长兴里", type: "购物", time: "20:20", stay: "1小时", x: 50, y: 45, lat: 38.9191, lng: 121.5898, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "饭后在西安路商圈轻松走一圈，买水和第二天早餐，不专门跨城追网红店。", tip: "演唱会是本次主目标，第一晚 22:00 前回酒店，保证第二天体力。", address: "西安路商圈 / 长兴里" },
 
   { id: "dl-hotel-start", day: 2, order: 1, name: "西安路酒店出发", korean: "轻装看海", type: "酒店", time: "08:30", stay: "出发", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "只背小包出门，演唱会证件与充电宝先检查一遍。", tip: "海边风比市区明显，薄外套不要留在酒店。", address: "大连地铁西安路站附近" },
   { id: "dl-xinghai-square", day: 2, order: 2, name: "星海广场", korean: "城市地标与海湾", type: "景点", time: "09:10", stay: "1小时", x: 50, y: 45, lat: 38.8811, lng: 121.5830, photoPosition: "center", photo: "/places/dalian/xinghai-square.jpg", photoSource: "https://commons.wikimedia.org/wiki/File:Dalian_Xinghai_Square.jpg", photoCredit: "JesseW900 / Wikimedia Commons", intro: "先看广场尺度、海湾和跨海大桥。上午人相对少，也给下午回酒店休息留出余量。", tip: "广场很大，不追求走完；海鸥和喷泉受季节、天气影响，不把它们作为硬性项目。", address: "大连市沙河口区中山路" },
   { id: "dl-xinghai-park", day: 2, order: 3, name: "星海公园海边", korean: "海岸慢走", type: "景点", time: "10:30", stay: "1小时", x: 50, y: 45, lat: 38.8832, lng: 121.5638, photoPosition: "center", photo: "/places/dalian/xinghai-park.jpg", photoSource: "https://you.ctrip.com/travels/dalian4/4069801.html", photoCredit: "携程游记实拍", intro: "沿海边走一小段，看看礁石、海面和星海湾大桥；这是本次行程最纯粹的看海时间。", tip: "9 月下旬海风偏凉，岸边石头湿滑；不下水、不翻越护栏。", address: "大连市沙河口区中山路634号" },
-  { id: "dl-seafood-2", day: 2, order: 4, name: "海鲜午餐", korean: "海肠捞饭 / 海胆水饺", type: "美食", time: "12:00", stay: "1.5小时", x: 50, y: 45, lat: 38.8870, lng: 121.5705, photoPosition: "center", photo: "/places/dalian/seafood.jpg", photoSource: "https://us.trip.com/restaurant/china/dalian/detail/restaurant-133602295/", photoCredit: "携程用户实拍", intro: "在星海片区选一家评分稳定、支持单人点餐的店。优先海肠捞饭或海胆水饺，昨天吃过的就换一种。", tip: "不要挑战多人份蒸汽海鲜锅；一个人按‘一主食＋一贝类/生蚝’点，预算约 80–150 元。", address: "星海公园 / 黑石礁附近" },
+  { id: "dl-seafood-2", day: 2, order: 4, name: "海肠捞饭·单人午餐", korean: "和平广场店", type: "美食", time: "12:10", stay: "1小时", x: 50, y: 45, lat: 38.8979, lng: 121.5876, photoPosition: "center", photo: "/places/dalian/seafood.jpg", photoSource: "https://www.trip.com/restaurant/china/dalian/detail/restaurant-78394495/", photoCredit: "携程餐厅资料图", intro: "从海边回程在凯德和平广场吃一份海肠捞饭，商场店比临时找海鲜大排档更适合一个人，也顺路回酒店休息。昨天已吃水饺，今天只尝这一道代表菜。", tip: "参考小郭海肠捞饭 4 楼店。入座前直接问：‘一个人，只点一份海肠捞饭可以吗？有最低消费吗？’不可以就去同商场美食区选单人套餐，不耽误演唱会。", address: "凯德和平广场4楼48B号铺（出发前再核对）" },
   { id: "dl-hotel-rest", day: 2, order: 5, name: "回酒店休息", korean: "为演唱会留体力", type: "酒店", time: "14:00", stay: "2小时", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "午后回酒店充电、洗漱、整理随身物品，避开在演出前继续暴走。", tip: "16:20 前完成换装和补水，电子票、身份证、充电宝、耳塞逐项检查。", address: "大连地铁西安路站附近" },
   { id: "dl-concert", day: 2, order: 6, name: "薛之谦·万兽之王", korean: "大连体育中心体育场", type: "演出", time: "17:15", stay: "约5小时", x: 50, y: 45, lat: 39.0200, lng: 121.5640, photoPosition: "center", photo: "/places/dalian/concert.png", photoSource: "https://www.dlsportscenter.com/index.php/article/show/id/3870/language/cn/", photoCredit: "大连体育中心官方", intro: "9 月 26 日 19:30 开唱。计划 17:15 左右抵达，留足安检、找入口、上洗手间和进场时间。", tip: "乘地铁 2 号线在体育中心站下车；按电子票夹中的入口走。散场听从现场导流，临时封站或延时安排以当天大连地铁公告为准。", address: "大连市甘井子区岚岭路699号" },
 
@@ -148,12 +148,12 @@ const dalianSpots: Spot[] = [
 
 const dalianRoutes: RouteInfo[] = [
   { id: "dl-r11", day: 1, from: "大连北站", to: "西安路酒店", method: "地铁 1 号线", duration: "约 35–45 分钟", note: "大连北站上车，往河口方向至西安路站；不用换乘。" },
-  { id: "dl-r12", day: 1, from: "西安路酒店", to: "老大连海鲜晚餐", method: "步行", duration: "约 10–15 分钟", note: "先在线确认营业与排队情况；等位太久就换西安路附近同类店。" },
-  { id: "dl-r13", day: 1, from: "老大连海鲜晚餐", to: "西安路夜逛", method: "步行", duration: "约 10 分钟", note: "只做饭后散步，不延长到太晚。" },
+  { id: "dl-r12", day: 1, from: "西安路酒店", to: "海胆水饺·单人晚餐", method: "步行", duration: "约 10–15 分钟", note: "先确认可点半份；等位超过 20 分钟就直接切换长兴里小吃档口。" },
+  { id: "dl-r13", day: 1, from: "海胆水饺·单人晚餐", to: "西安路夜逛", method: "步行", duration: "约 10 分钟", note: "只做饭后散步，不延长到太晚。" },
   { id: "dl-r21", day: 2, from: "西安路酒店出发", to: "星海广场", method: "地铁 1 号线 + 步行", duration: "约 25 分钟", note: "从西安路到星海广场站，出站后按导航步行至海边。" },
   { id: "dl-r22", day: 2, from: "星海广场", to: "星海公园海边", method: "公交 / 打车", duration: "约 15–25 分钟", note: "不建议沿主路硬走全程；一个人打车省体力也方便。" },
-  { id: "dl-r23", day: 2, from: "星海公园海边", to: "海鲜午餐", method: "步行", duration: "约 10–15 分钟", note: "餐厅以当天排队和单人套餐为准，不执着某一家网红店。" },
-  { id: "dl-r24", day: 2, from: "海鲜午餐", to: "回酒店休息", method: "地铁 1 号线", duration: "约 25 分钟", note: "14:30 前回到酒店，给演唱会预留完整休息时段。" },
+  { id: "dl-r23", day: 2, from: "星海公园海边", to: "海肠捞饭·单人午餐", method: "地铁 1 号线 + 步行", duration: "约 20–30 分钟", note: "黑石礁站上车到富国街站，去和平广场；不在海边临时找多人海鲜餐厅。" },
+  { id: "dl-r24", day: 2, from: "海肠捞饭·单人午餐", to: "回酒店休息", method: "地铁 1 号线 / 打车", duration: "约 15–20 分钟", note: "最晚 14:15 回到酒店，给演唱会预留完整休息时段。" },
   { id: "dl-r25", day: 2, from: "回酒店休息", to: "薛之谦·万兽之王", method: "地铁 2 号线", duration: "约 35–45 分钟", note: "西安路站往大连北站方向，体育中心站下车；17:15 左右到场最稳妥。" },
   { id: "dl-r31", day: 3, from: "酒店退房", to: "大连北站返程", method: "地铁 1 号线", duration: "约 35–45 分钟", note: "08:20 前进站，往姚家方向坐到大连北站；不换乘。" },
 ];
@@ -231,6 +231,10 @@ const dalianChecklistGroups = [
     { id: "dl-toiletry", label: "洗漱与护肤小样", note: "两晚不带大瓶，减少负重。" },
     { id: "dl-medicine", label: "肠胃药与创可贴", note: "海鲜不贪多，对不熟悉的生食保持谨慎。" },
   ]},
+  { title: "一个人吃饭", items: [
+    { id: "dl-solo-order", label: "进店先问单人份和最低消费", note: "不能只点一道、必须点套餐或明显不方便接待单人时，直接换店，不勉强消费。" },
+    { id: "dl-solo-backup", label: "收藏长兴里和商场美食区", note: "包鲜盛排队时去长兴里；和平广场餐厅不合适时就在同商场选单人套餐。" },
+  ]},
 ];
 
 const dalianTravelNotes = [
@@ -238,7 +242,7 @@ const dalianTravelNotes = [
   { title: "提前约两小时到场", body: "建议 16:20 从酒店出发、17:15 左右抵达。留出安检、找入口、上洗手间和拍照时间。", icon: ShieldCheck },
   { title: "去场馆坐地铁 2 号线", body: "从西安路站往大连北站方向，到体育中心站下车。散场按现场导流走，临时封站和延时运营以当天公告为准。", icon: TrainFront },
   { title: "看海选星海线", body: "星海广场加星海公园足够覆盖城市地标、海湾和海边慢走；不再塞东港、老虎滩或跨城景点。", icon: Waves },
-  { title: "一个人吃海鲜", body: "优先海肠捞饭、海胆水饺、烤生蚝等可单点菜。每顿一份主食加一份小海鲜，避免多人份蒸锅和过量生食。", icon: UtensilsCrossed },
+  { title: "一个人吃饭的规则", body: "优先半份海胆水饺、单份海肠捞饭和按份小吃。进店先问能否只点一道、有没有最低消费；需要多人套餐就离开，切到长兴里或商场美食区。", icon: UtensilsCrossed },
   { title: "返程日上午不排景点", body: "10:29 从大连北站发车，建议 08:20 前离开酒店、09:00 左右到站，预留安检与候车时间。", icon: TrainFront },
 ];
 
@@ -297,9 +301,27 @@ const tripPlans = {
     dayMeta: dalianDayMeta,
     checklistGroups: dalianChecklistGroups,
     travelNotes: dalianTravelNotes,
-    budget: ["两顿海鲜", "约 ¥160–300", "市内交通", "约 ¥30–80", "演唱会票价不计入；一个人吃海鲜少点勤加。"],
+    budget: ["两顿单人特色餐", "约 ¥90–180", "市内交通", "约 ¥30–80", "演唱会票价不计入；先点主食，吃得下再加，不为凑菜勉强消费。"],
   },
 };
+
+const publishedDalianMealIds = new Set(["dl-seafood-1", "dl-seafood-2"]);
+
+function mergePublishedSpotUpdates(saved: Spot[], published: readonly Spot[], id: TripId) {
+  return saved.map((spot) => {
+    const source = published.find((entry) => entry.id === spot.id);
+    if (!source) return spot;
+    if (id === "dalian" && publishedDalianMealIds.has(spot.id)) return { ...spot, ...source };
+    return {
+      ...spot,
+      lat: source.lat,
+      lng: source.lng,
+      photo: source.photo,
+      photoSource: source.photoSource,
+      photoCredit: source.photoCredit,
+    };
+  });
+}
 
 export default function Home() {
   const [tripId, setTripId] = useState<TripId>(() => {
@@ -315,17 +337,7 @@ export default function Home() {
     if (!saved) return initialTrip.spots;
     try {
       const parsed = JSON.parse(saved) as Spot[];
-      return parsed.map((spot) => {
-        const source = initialTrip.spots.find((entry) => entry.id === spot.id);
-        return source ? {
-          ...spot,
-          lat: source.lat,
-          lng: source.lng,
-          photo: source.photo,
-          photoSource: source.photoSource,
-          photoCredit: source.photoCredit,
-        } : spot;
-      });
+      return mergePublishedSpotUpdates(parsed, initialTrip.spots, initialId);
     } catch { return initialTrip.spots; }
   });
   const [activeDay, setActiveDay] = useState(1);
@@ -416,7 +428,7 @@ export default function Home() {
     let nextChecked: string[] = [];
     try {
       const savedSpots = window.localStorage.getItem(nextTrip.storageKey);
-      if (savedSpots) nextSpots = JSON.parse(savedSpots) as Spot[];
+      if (savedSpots) nextSpots = mergePublishedSpotUpdates(JSON.parse(savedSpots) as Spot[], nextTrip.spots, nextId);
       const savedChecked = window.localStorage.getItem(nextTrip.checkedKey);
       if (savedChecked) nextChecked = JSON.parse(savedChecked) as string[];
     } catch { /* Fall back to the published itinerary. */ }
