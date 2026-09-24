@@ -130,10 +130,11 @@ const actualRoutes: RouteInfo[] = [
 ];
 
 const dalianSpots: Spot[] = [
-  { id: "dl-north-arrive", day: 1, order: 1, name: "大连北站", korean: "抵达大连", type: "景点", time: "16:41", stay: "20分钟", x: 50, y: 45, lat: 39.0152, lng: 121.6027, photoPosition: "center", photo: "/places/dalian/dalian-north.jpg", photoSource: "https://commons.wikimedia.org/wiki/File:Dalian_North_Railway_Station_2017.jpg", photoCredit: "Baycrest / Wikimedia Commons", intro: "抵达后直接从南广场地下进入地铁，第一晚只安排入住、海鲜和西安路散步，不把行程塞满。", tip: "下车先确认返程检票口和地铁入口；地铁 1 号线往河口方向可直达西安路。", address: "大连市甘井子区华北路" },
+  { id: "dl-north-arrive", day: 1, order: 1, name: "大连北站", korean: "抵达大连", type: "景点", time: "16:41", stay: "20分钟", x: 50, y: 45, lat: 39.0152, lng: 121.6027, photoPosition: "center", photo: "/places/dalian/dalian-north.jpg", photoSource: "https://commons.wikimedia.org/wiki/File:Dalian_North_Railway_Station_2017.jpg", photoCredit: "Baycrest / Wikimedia Commons", intro: "抵达后直接从南广场地下进入地铁。第一晚安排入住、单人晚餐和一条短夜景线，节奏仍以不累为准。", tip: "下车先确认返程检票口和地铁入口；地铁 1 号线往河口方向可直达西安路。", address: "大连市甘井子区华北路" },
   { id: "dl-hotel-1", day: 1, order: 2, name: "西安路酒店", korean: "西安路站附近", type: "酒店", time: "17:40", stay: "办理入住", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "两晚都住西安路站附近：去星海、体育中心和大连北站都能坐地铁直达或少换乘。", tip: "到店后立刻确认周日能否寄存或快速退房；把酒店门牌和电话截图。", address: "大连地铁西安路站附近" },
   { id: "dl-seafood-1", day: 1, order: 3, name: "海胆水饺·单人晚餐", korean: "包鲜盛西安路店", type: "美食", time: "18:40", stay: "1小时", x: 50, y: 45, lat: 38.9194, lng: 121.5915, photoPosition: "center", photo: "/places/dalian/seafood.jpg", photoSource: "https://us.trip.com/restaurant/china/dalian/detail/restaurant-133042926", photoCredit: "携程餐厅资料图", intro: "第一顿改成更适合独食的水饺店：优先点半份海胆水饺或海胆小笼包，不需要为了尝海鲜凑一桌大菜。没吃饱再加一份普通水饺或小笼包。", tip: "参考店为民政街 394 号的包鲜盛。进店先确认能否点半份、是否需要拼桌；排队超过 20 分钟就去长兴里按份买焖子、烤鱿鱼或包子。", address: "沙河口区民政街394号（出发前再核对）" },
-  { id: "dl-xian-night", day: 1, order: 4, name: "西安路夜逛", korean: "商圈与长兴里", type: "购物", time: "20:20", stay: "1小时", x: 50, y: 45, lat: 38.9191, lng: 121.5898, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "饭后在西安路商圈轻松走一圈，买水和第二天早餐，不专门跨城追网红店。", tip: "演唱会是本次主目标，第一晚 22:00 前回酒店，保证第二天体力。", address: "西安路商圈 / 长兴里" },
+  { id: "dl-xian-night", day: 1, order: 4, name: "西安路短逛与补给", korean: "长兴里 / 商圈", type: "购物", time: "19:45", stay: "30分钟", x: 50, y: 45, lat: 38.9191, lng: 121.5898, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "晚饭后只在西安路和长兴里附近短走，买水、早餐与第二天需要的补给，不在这里停留太久。", tip: "如果晚餐排队或坐车已经很累，就保留这一站并取消后面的夜景线，直接回酒店。", address: "西安路商圈 / 长兴里" },
+  { id: "dl-zhongshan-night", day: 1, order: 5, name: "中山广场夜景", korean: "友好广场短线", type: "景点", time: "20:40", stay: "1小时", x: 50, y: 45, lat: 38.9219, lng: 121.6389, photoPosition: "center", photo: "/places/dalian/zhongshan-square-night.jpg", photoSource: "https://kr.trip.com/moments/detail/dalian-4-120294875/", photoCredit: "Trip.com 用户实拍", intro: "从中山广场看环形广场与亮灯的近代建筑，再沿中山路向西步行约 700 米到友好广场看水晶球。全程是平坦、明亮的市中心短线。", tip: "广场外围是环岛车流，不要为了拍照横穿马路；21:35 左右从友好广场站坐地铁 2 号线回西安路。下雨、晚点或疲劳时整段取消。", address: "中山广场 D 口 → 友好广场" },
 
   { id: "dl-hotel-start", day: 2, order: 1, name: "西安路酒店出发", korean: "轻装看海", type: "酒店", time: "08:30", stay: "出发", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "只背小包出门，演唱会证件与充电宝先检查一遍。", tip: "海边风比市区明显，薄外套不要留在酒店。", address: "大连地铁西安路站附近" },
   { id: "dl-xinghai-square", day: 2, order: 2, name: "星海广场", korean: "城市地标与海湾", type: "景点", time: "09:10", stay: "1小时", x: 50, y: 45, lat: 38.8811, lng: 121.5830, photoPosition: "center", photo: "/places/dalian/xinghai-square.jpg", photoSource: "https://commons.wikimedia.org/wiki/File:Dalian_Xinghai_Square.jpg", photoCredit: "JesseW900 / Wikimedia Commons", intro: "先看广场尺度、海湾和跨海大桥。上午人相对少，也给下午回酒店休息留出余量。", tip: "广场很大，不追求走完；海鸥和喷泉受季节、天气影响，不把它们作为硬性项目。", address: "大连市沙河口区中山路" },
@@ -149,7 +150,9 @@ const dalianSpots: Spot[] = [
 const dalianRoutes: RouteInfo[] = [
   { id: "dl-r11", day: 1, from: "大连北站", to: "西安路酒店", method: "地铁 1 号线", duration: "约 35–45 分钟", note: "大连北站上车，往河口方向至西安路站；不用换乘。" },
   { id: "dl-r12", day: 1, from: "西安路酒店", to: "海胆水饺·单人晚餐", method: "步行", duration: "约 10–15 分钟", note: "先确认可点半份；等位超过 20 分钟就直接切换长兴里小吃档口。" },
-  { id: "dl-r13", day: 1, from: "海胆水饺·单人晚餐", to: "西安路夜逛", method: "步行", duration: "约 10 分钟", note: "只做饭后散步，不延长到太晚。" },
+  { id: "dl-r13", day: 1, from: "海胆水饺·单人晚餐", to: "西安路短逛与补给", method: "步行", duration: "约 5–10 分钟", note: "买好饮水和早餐就走，不把体力消耗在商场里。" },
+  { id: "dl-r14", day: 1, from: "西安路短逛与补给", to: "中山广场夜景", method: "地铁 2 号线", duration: "约 20–25 分钟", note: "西安路站往海之韵方向，中山广场站 D 口出；不用换乘。" },
+  { id: "dl-r15", day: 1, from: "中山广场夜景", to: "西安路酒店", method: "步行 + 地铁 2 号线", duration: "约 25–35 分钟", note: "沿中山路步行到友好广场，从友好广场站直达西安路；目标 22:10 前回酒店。" },
   { id: "dl-r21", day: 2, from: "西安路酒店出发", to: "星海广场", method: "地铁 1 号线 + 步行", duration: "约 25 分钟", note: "从西安路到星海广场站，出站后按导航步行至海边。" },
   { id: "dl-r22", day: 2, from: "星海广场", to: "星海公园海边", method: "公交 / 打车", duration: "约 15–25 分钟", note: "不建议沿主路硬走全程；一个人打车省体力也方便。" },
   { id: "dl-r23", day: 2, from: "星海公园海边", to: "海肠捞饭·单人午餐", method: "地铁 1 号线 + 步行", duration: "约 20–30 分钟", note: "黑石礁站上车到富国街站，去和平广场；不在海边临时找多人海鲜餐厅。" },
@@ -247,7 +250,7 @@ const dalianTravelNotes = [
 ];
 
 const dalianDayMeta = [
-  { day: 1, label: "抵达与海鲜", date: "09.25 · 周五", color: "#e96a46", distance: "轻松入住线" },
+  { day: 1, label: "抵达与老城夜景", date: "09.25 · 周五", color: "#e96a46", distance: "可取消的短夜游" },
   { day: 2, label: "海边与演唱会", date: "09.26 · 周六", color: "#167d92", distance: "主行程 · 19:30 开唱" },
   { day: 3, label: "从容返程", date: "09.27 · 周日", color: "#6a6795", distance: "10:29 大连北出发" },
 ];
@@ -305,13 +308,13 @@ const tripPlans = {
   },
 };
 
-const publishedDalianMealIds = new Set(["dl-seafood-1", "dl-seafood-2"]);
+const publishedDalianUpdateIds = new Set(["dl-seafood-1", "dl-seafood-2", "dl-xian-night", "dl-zhongshan-night"]);
 
 function mergePublishedSpotUpdates(saved: Spot[], published: readonly Spot[], id: TripId) {
   return saved.map((spot) => {
     const source = published.find((entry) => entry.id === spot.id);
     if (!source) return spot;
-    if (id === "dalian" && publishedDalianMealIds.has(spot.id)) return { ...spot, ...source };
+    if (id === "dalian" && publishedDalianUpdateIds.has(spot.id)) return { ...spot, ...source };
     return {
       ...spot,
       lat: source.lat,
@@ -320,7 +323,11 @@ function mergePublishedSpotUpdates(saved: Spot[], published: readonly Spot[], id
       photoSource: source.photoSource,
       photoCredit: source.photoCredit,
     };
-  });
+  }).concat(
+    id === "dalian"
+      ? published.filter((spot) => publishedDalianUpdateIds.has(spot.id) && !saved.some((entry) => entry.id === spot.id))
+      : [],
+  );
 }
 
 export default function Home() {
