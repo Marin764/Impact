@@ -136,12 +136,13 @@ const dalianSpots: Spot[] = [
   { id: "dl-xian-night", day: 1, order: 4, name: "西安路短逛与补给", korean: "长兴里 / 商圈", type: "购物", time: "19:45", stay: "30分钟", x: 50, y: 45, lat: 38.9191, lng: 121.5898, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "晚饭后只在西安路和长兴里附近短走，买水、早餐与第二天需要的补给，不在这里停留太久。", tip: "如果晚餐排队或坐车已经很累，就保留这一站并取消后面的夜景线，直接回酒店。", address: "西安路商圈 / 长兴里" },
   { id: "dl-zhongshan-night", day: 1, order: 5, name: "中山广场夜景", korean: "友好广场短线", type: "景点", time: "20:40", stay: "1小时", x: 50, y: 45, lat: 38.9219, lng: 121.6389, photoPosition: "center", photo: "/places/dalian/zhongshan-square-night.jpg", photoSource: "https://kr.trip.com/moments/detail/dalian-4-120294875/", photoCredit: "Trip.com 用户实拍", intro: "从中山广场看环形广场与亮灯的近代建筑，再沿中山路向西步行约 700 米到友好广场看水晶球。全程是平坦、明亮的市中心短线。", tip: "广场外围是环岛车流，不要为了拍照横穿马路；21:35 左右从友好广场站坐地铁 2 号线回西安路。下雨、晚点或疲劳时整段取消。", address: "中山广场 D 口 → 友好广场" },
 
-  { id: "dl-hotel-start", day: 2, order: 1, name: "西安路酒店出发", korean: "轻装看海", type: "酒店", time: "08:30", stay: "出发", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "只背小包出门，演唱会证件与充电宝先检查一遍。", tip: "海边风比市区明显，薄外套不要留在酒店。", address: "大连地铁西安路站附近" },
-  { id: "dl-xinghai-square", day: 2, order: 2, name: "星海广场", korean: "城市地标与海湾", type: "景点", time: "09:10", stay: "1小时", x: 50, y: 45, lat: 38.8811, lng: 121.5830, photoPosition: "center", photo: "/places/dalian/xinghai-square.jpg", photoSource: "https://commons.wikimedia.org/wiki/File:Dalian_Xinghai_Square.jpg", photoCredit: "JesseW900 / Wikimedia Commons", intro: "先看广场尺度、海湾和跨海大桥。上午人相对少，也给下午回酒店休息留出余量。", tip: "广场很大，不追求走完；海鸥和喷泉受季节、天气影响，不把它们作为硬性项目。", address: "大连市沙河口区中山路" },
-  { id: "dl-xinghai-park", day: 2, order: 3, name: "星海公园海边", korean: "海岸慢走", type: "景点", time: "10:30", stay: "1小时", x: 50, y: 45, lat: 38.8832, lng: 121.5638, photoPosition: "center", photo: "/places/dalian/xinghai-park.jpg", photoSource: "https://you.ctrip.com/travels/dalian4/4069801.html", photoCredit: "携程游记实拍", intro: "沿海边走一小段，看看礁石、海面和星海湾大桥；这是本次行程最纯粹的看海时间。", tip: "9 月下旬海风偏凉，岸边石头湿滑；不下水、不翻越护栏。", address: "大连市沙河口区中山路634号" },
-  { id: "dl-seafood-2", day: 2, order: 4, name: "海肠捞饭·单人午餐", korean: "和平广场店", type: "美食", time: "12:10", stay: "1小时", x: 50, y: 45, lat: 38.8979, lng: 121.5876, photoPosition: "center", photo: "/places/dalian/seafood.jpg", photoSource: "https://www.trip.com/restaurant/china/dalian/detail/restaurant-78394495/", photoCredit: "携程餐厅资料图", intro: "从海边回程在凯德和平广场吃一份海肠捞饭，商场店比临时找海鲜大排档更适合一个人，也顺路回酒店休息。昨天已吃水饺，今天只尝这一道代表菜。", tip: "参考小郭海肠捞饭 4 楼店。入座前直接问：‘一个人，只点一份海肠捞饭可以吗？有最低消费吗？’不可以就去同商场美食区选单人套餐，不耽误演唱会。", address: "凯德和平广场4楼48B号铺（出发前再核对）" },
-  { id: "dl-hotel-rest", day: 2, order: 5, name: "回酒店休息", korean: "为演唱会留体力", type: "酒店", time: "14:00", stay: "2小时", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "午后回酒店充电、洗漱、整理随身物品，避开在演出前继续暴走。", tip: "16:20 前完成换装和补水，电子票、身份证、充电宝、耳塞逐项检查。", address: "大连地铁西安路站附近" },
-  { id: "dl-concert", day: 2, order: 6, name: "薛之谦·万兽之王", korean: "大连体育中心体育场", type: "演出", time: "17:15", stay: "约5小时", x: 50, y: 45, lat: 39.0200, lng: 121.5640, photoPosition: "center", photo: "/places/dalian/concert.png", photoSource: "https://www.dlsportscenter.com/index.php/article/show/id/3870/language/cn/", photoCredit: "大连体育中心官方", intro: "9 月 26 日 19:30 开唱。计划 17:15 左右抵达，留足安检、找入口、上洗手间和进场时间。", tip: "乘地铁 2 号线在体育中心站下车；按电子票夹中的入口走。散场听从现场导流，临时封站或延时安排以当天大连地铁公告为准。", address: "大连市甘井子区岚岭路699号" },
+  { id: "dl-hotel-start", day: 2, order: 1, name: "西安路酒店出发", korean: "轻装看展与看海", type: "酒店", time: "08:30", stay: "出发", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "只背小包出门，先去室内博物馆，再根据实时降雨决定是否去海边。", tip: "带身份证、折叠伞和薄外套；演唱会证件与充电宝出门前检查一遍。", address: "大连地铁西安路站附近" },
+  { id: "dl-dalian-museum", day: 2, order: 2, name: "大连博物馆", korean: "近代大连展", type: "景点", time: "09:00", stay: "1.5小时", x: 50, y: 45, lat: 38.8907, lng: 121.5864, photoPosition: "center", photo: "/places/dalian/dalian-museum.jpg", photoSource: "https://www.trip.com/travel-guide/guidebook/things-to-do-dalian-4", photoCredit: "Trip.com 景点资料图", intro: "先从《近代大连》等展览了解城市、港口与老建筑的来历。室内行程不受上午降雨影响，也不会过早消耗演唱会体力。", tip: "周六 09:00–16:30 开放，免费且个人免预约；必须带本人有效身份证件，经安检后入馆。10:25 左右查看实时雷达，再决定是否去广场。", address: "沙河口区会展路10号" },
+  { id: "dl-xinghai-square", day: 2, order: 3, name: "星海广场·天气决定", korean: "无雨短停", type: "景点", time: "10:40", stay: "20–30分钟", x: 50, y: 45, lat: 38.8811, lng: 121.5830, photoPosition: "center", photo: "/places/dalian/xinghai-square.jpg", photoSource: "https://commons.wikimedia.org/wiki/File:Dalian_Xinghai_Square.jpg", photoCredit: "JesseW900 / Wikimedia Commons", intro: "没有持续降雨时，从博物馆步行到广场南侧，短看海湾、广场尺度和跨海大桥，不追求走完整个广场。", tip: "9 月 26 日目前预报小雨转多云并伴 4–5 级风。毛毛雨可停 10–20 分钟；持续下雨、阵雨明显或风大时直接跳过，不在空旷广场撑伞久留。", address: "大连市沙河口区中山路" },
+  { id: "dl-xinghai-park", day: 2, order: 4, name: "星海公园·无雨可选", korean: "海岸短走", type: "景点", time: "11:20", stay: "25分钟", x: 50, y: 45, lat: 38.8832, lng: 121.5638, photoPosition: "center", photo: "/places/dalian/xinghai-park.jpg", photoSource: "https://you.ctrip.com/travels/dalian4/4069801.html", photoCredit: "携程游记实拍", intro: "天气稳定并且脚下干燥时，沿海边短走一段看看礁石和海面；它是加分项，不是必须完成的任务。", tip: "只要还在下雨或地面湿滑就取消。岸边石头不要走，不下水、不翻越护栏；取消后可以提前去和平广场吃饭。", address: "大连市沙河口区中山路634号" },
+  { id: "dl-seafood-2", day: 2, order: 5, name: "海肠捞饭·单人午餐", korean: "和平广场店", type: "美食", time: "12:10", stay: "1小时", x: 50, y: 45, lat: 38.8979, lng: 121.5876, photoPosition: "center", photo: "/places/dalian/seafood.jpg", photoSource: "https://www.trip.com/restaurant/china/dalian/detail/restaurant-78394495/", photoCredit: "携程餐厅资料图", intro: "在凯德和平广场吃一份海肠捞饭。下雨时可从博物馆直接前往；天气好时从星海公园回程，商场店也方便避雨。", tip: "参考小郭海肠捞饭 4 楼店。入座前直接问：‘一个人，只点一份海肠捞饭可以吗？有最低消费吗？’不可以就去同商场美食区选单人套餐。", address: "凯德和平广场4楼48B号铺（出发前再核对）" },
+  { id: "dl-hotel-rest", day: 2, order: 6, name: "回酒店休息", korean: "为演唱会留体力", type: "酒店", time: "13:30", stay: "2.5小时", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "午后回酒店充电、洗漱、整理随身物品。雨天取消海边后会更早回来，不需要另塞景点。", tip: "16:20 前完成换装和补水，电子票、身份证、充电宝、耳塞逐项检查。", address: "大连地铁西安路站附近" },
+  { id: "dl-concert", day: 2, order: 7, name: "薛之谦·万兽之王", korean: "大连体育中心体育场", type: "演出", time: "17:15", stay: "约5小时", x: 50, y: 45, lat: 39.0200, lng: 121.5640, photoPosition: "center", photo: "/places/dalian/concert.png", photoSource: "https://www.dlsportscenter.com/index.php/article/show/id/3870/language/cn/", photoCredit: "大连体育中心官方", intro: "9 月 26 日 19:30 开唱。计划 17:15 左右抵达，留足安检、找入口、上洗手间和进场时间。", tip: "乘地铁 2 号线在体育中心站下车；按电子票夹中的入口走。散场听从现场导流，临时封站或延时安排以当天大连地铁公告为准。", address: "大连市甘井子区岚岭路699号" },
 
   { id: "dl-hotel-out", day: 3, order: 1, name: "酒店退房", korean: "西安路站", type: "酒店", time: "08:10", stay: "10分钟", x: 50, y: 45, lat: 38.9190, lng: 121.5935, photoPosition: "center", photo: "/places/dalian/xian-road.jpg", photoSource: "https://www.td365.com.cn/newsportal/detail/15716", photoCredit: "西安路夜市资料图", intro: "返程日不再塞景点，退房后直接去大连北站。", tip: "最迟 08:20 离店；前一晚把行李完全收好，闹钟设两个。", address: "大连地铁西安路站附近" },
   { id: "dl-north-leave", day: 3, order: 2, name: "大连北站返程", korean: "10:29 发车", type: "景点", time: "09:00", stay: "候车", x: 50, y: 45, lat: 39.0152, lng: 121.6027, photoPosition: "center", photo: "/places/dalian/dalian-north.jpg", photoSource: "https://commons.wikimedia.org/wiki/File:Dalian_North_Railway_Station_2017.jpg", photoCredit: "Baycrest / Wikimedia Commons", intro: "预留约 80–90 分钟进站、安检、找检票口和买早餐，10:29 从大连北站离开。", tip: "西安路乘地铁 1 号线往姚家方向直达；若地铁异常，立即改打车，不再安排早餐店绕行。", address: "大连市甘井子区华北路" },
@@ -153,9 +154,10 @@ const dalianRoutes: RouteInfo[] = [
   { id: "dl-r13", day: 1, from: "海胆水饺·单人晚餐", to: "西安路短逛与补给", method: "步行", duration: "约 5–10 分钟", note: "买好饮水和早餐就走，不把体力消耗在商场里。" },
   { id: "dl-r14", day: 1, from: "西安路短逛与补给", to: "中山广场夜景", method: "地铁 2 号线", duration: "约 20–25 分钟", note: "西安路站往海之韵方向，中山广场站 D 口出；不用换乘。" },
   { id: "dl-r15", day: 1, from: "中山广场夜景", to: "西安路酒店", method: "步行 + 地铁 2 号线", duration: "约 25–35 分钟", note: "沿中山路步行到友好广场，从友好广场站直达西安路；目标 22:10 前回酒店。" },
-  { id: "dl-r21", day: 2, from: "西安路酒店出发", to: "星海广场", method: "地铁 1 号线 + 步行", duration: "约 25 分钟", note: "从西安路到星海广场站，出站后按导航步行至海边。" },
-  { id: "dl-r22", day: 2, from: "星海广场", to: "星海公园海边", method: "公交 / 打车", duration: "约 15–25 分钟", note: "不建议沿主路硬走全程；一个人打车省体力也方便。" },
-  { id: "dl-r23", day: 2, from: "星海公园海边", to: "海肠捞饭·单人午餐", method: "地铁 1 号线 + 步行", duration: "约 20–30 分钟", note: "黑石礁站上车到富国街站，去和平广场；不在海边临时找多人海鲜餐厅。" },
+  { id: "dl-r21", day: 2, from: "西安路酒店出发", to: "大连博物馆", method: "地铁 1 号线 + 步行", duration: "约 25 分钟", note: "星海广场站 A2 口出，按导航步行到会展路 10 号。" },
+  { id: "dl-r22", day: 2, from: "大连博物馆", to: "星海广场·天气决定", method: "步行", duration: "约 10–15 分钟", note: "只在雨停或毛毛雨时前往；持续降雨就从博物馆直接去和平广场。" },
+  { id: "dl-r23", day: 2, from: "星海广场·天气决定", to: "星海公园·无雨可选", method: "公交 / 打车", duration: "约 15–25 分钟", note: "海边段不硬走；风雨明显时两站一起取消。" },
+  { id: "dl-r26", day: 2, from: "星海公园·无雨可选", to: "海肠捞饭·单人午餐", method: "地铁 1 号线 + 步行", duration: "约 20–30 分钟", note: "黑石礁站上车到富国街站；若海边取消，则从博物馆打车约 10 分钟到和平广场。" },
   { id: "dl-r24", day: 2, from: "海肠捞饭·单人午餐", to: "回酒店休息", method: "地铁 1 号线 / 打车", duration: "约 15–20 分钟", note: "最晚 14:15 回到酒店，给演唱会预留完整休息时段。" },
   { id: "dl-r25", day: 2, from: "回酒店休息", to: "薛之谦·万兽之王", method: "地铁 2 号线", duration: "约 35–45 分钟", note: "西安路站往大连北站方向，体育中心站下车；17:15 左右到场最稳妥。" },
   { id: "dl-r31", day: 3, from: "酒店退房", to: "大连北站返程", method: "地铁 1 号线", duration: "约 35–45 分钟", note: "08:20 前进站，往姚家方向坐到大连北站；不换乘。" },
@@ -244,14 +246,14 @@ const dalianTravelNotes = [
   { title: "演唱会信息已核实", body: "9 月 26 日 19:30，大连体育中心体育场（甘井子区岚岭路 699 号）。不是梭鱼湾足球场。", icon: Music2 },
   { title: "提前约两小时到场", body: "建议 16:20 从酒店出发、17:15 左右抵达。留出安检、找入口、上洗手间和拍照时间。", icon: ShieldCheck },
   { title: "去场馆坐地铁 2 号线", body: "从西安路站往大连北站方向，到体育中心站下车。散场按现场导流走，临时封站和延时运营以当天公告为准。", icon: TrainFront },
-  { title: "看海选星海线", body: "星海广场加星海公园足够覆盖城市地标、海湾和海边慢走；不再塞东港、老虎滩或跨城景点。", icon: Waves },
+  { title: "雨天先逛博物馆", body: "9 月 26 日目前预报小雨转多云、4–5 级风。先逛大连博物馆；10:25 再看实时雷达。持续降雨或风大就取消星海广场和星海公园，直接去吃午饭。", icon: Waves },
   { title: "一个人吃饭的规则", body: "优先半份海胆水饺、单份海肠捞饭和按份小吃。进店先问能否只点一道、有没有最低消费；需要多人套餐就离开，切到长兴里或商场美食区。", icon: UtensilsCrossed },
   { title: "返程日上午不排景点", body: "10:29 从大连北站发车，建议 08:20 前离开酒店、09:00 左右到站，预留安检与候车时间。", icon: TrainFront },
 ];
 
 const dalianDayMeta = [
   { day: 1, label: "抵达与老城夜景", date: "09.25 · 周五", color: "#e96a46", distance: "可取消的短夜游" },
-  { day: 2, label: "海边与演唱会", date: "09.26 · 周六", color: "#167d92", distance: "主行程 · 19:30 开唱" },
+  { day: 2, label: "博物馆与演唱会", date: "09.26 · 周六", color: "#167d92", distance: "雨天弹性线 · 19:30 开唱" },
   { day: 3, label: "从容返程", date: "09.27 · 周日", color: "#6a6795", distance: "10:29 大连北出发" },
 ];
 
@@ -308,7 +310,7 @@ const tripPlans = {
   },
 };
 
-const publishedDalianUpdateIds = new Set(["dl-seafood-1", "dl-seafood-2", "dl-xian-night", "dl-zhongshan-night"]);
+const publishedDalianUpdateIds = new Set(["dl-seafood-1", "dl-seafood-2", "dl-xian-night", "dl-zhongshan-night", "dl-hotel-start", "dl-dalian-museum", "dl-xinghai-square", "dl-xinghai-park", "dl-hotel-rest"]);
 
 function mergePublishedSpotUpdates(saved: Spot[], published: readonly Spot[], id: TripId) {
   return saved.map((spot) => {
